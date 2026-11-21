@@ -1,0 +1,154 @@
+{
+  "updated": "2026-11-20 08:40",
+  "edition": "朝版",
+  "us_date": "2026-11-19",
+  "stage": 2,
+  "stage_label": "調整拡大",
+  "headline": "S&P500が60日安値を割り込み段階2へ。恐怖指標は陰の極に入ったが、信用（ハイイールド債）はまだ持ちこたえている。",
+  "analysis_html": "<p>11/19の米国市場は、ほぼ全面安でした。S&amp;P500は−2.02%の7,175.83で6日続落、ダウは1,101ドル安で6月以来の5万ドル割れ、ナスダックは−2.25%です。AI関連株への疑問、半導体への懸念、利上げ観測が重なり、単一の材料ではなく売りが広がった形です。Anthropicの上場直後に指数が場中の高値から崩れ、FRB関係者のインフレへの警戒発言も重しになりました。</p><p>この結果、S&amp;P500が60日安値を割り込み、VIXも28台まで上昇したため、判定は<b>段階2（調整拡大）</b>に上がりました。一方で、CNNのFear &amp; Greedは19と「陰の極」に入り、底の候補を示すサインが一つ点いています。</p><h3>見ているポイント</h3><ul><li><b>信用（HYG/IEF）：</b>60日安値まであと約0.3%。ここを割ると、期間構造の逆転と合わせて段階3（暴落型）の条件がそろいます。今回の下げで最も重要な分かれ目です。</li><li><b>VVIXのピークアウト：</b>VVIXは127と120を超えました。ここから基準（約115）まで下がれば、底打ちサインが点きます。</li><li><b>半導体ETF：</b>60日安値まであと約0.5%。割れれば二番底を試す展開です。</li><li>半導体：NVIDIAは11/17に売上高が前年比約2倍の決算を出しましたが、AI関連株への売りは止まっていません。好決算でも下げる地合いが続くかを見ています。</li><li>今夜は米国の月次オプション満期です。満期を通過した後に需給が軽くなるかに注目しています。</li></ul>",
+  "checkpoints": [
+    {
+      "label": "信用（HYG/IEF）と60日安値",
+      "distance": "あと約0.3%",
+      "meaning": "割れれば段階3（暴落型）の条件がそろう"
+    },
+    {
+      "label": "半導体ETF（SMH）と60日安値",
+      "distance": "あと約0.5%",
+      "meaning": "割れれば半導体が二番底を試す展開"
+    },
+    {
+      "label": "VIX",
+      "distance": "30まであと約5%",
+      "meaning": "30以上でパニック水準（底打ちサインの一つ）"
+    },
+    {
+      "label": "VVIX",
+      "distance": "基準まで約10%低下が必要",
+      "meaning": "下がれば底打ちサイン（ボラの先行指標がピークアウト）"
+    },
+    {
+      "label": "VIX期間構造（VIX/VIX3M）",
+      "distance": "1.05（逆転中）",
+      "meaning": "0.97を下回れば逆転解消の底打ちサイン"
+    }
+  ],
+  "signal_groups": [
+    {
+      "name": "ストレス",
+      "signals": [
+        {
+          "label": "半導体ETFが200日線割れ",
+          "on": true
+        },
+        {
+          "label": "半導体ETFが高値から10%超下落",
+          "on": true
+        },
+        {
+          "label": "S&P500が200日線割れ",
+          "on": true
+        },
+        {
+          "label": "S&P500が60日安値割れ",
+          "on": true
+        },
+        {
+          "label": "VIXが22以上",
+          "on": true
+        },
+        {
+          "label": "VIX期間構造の逆転",
+          "on": true
+        },
+        {
+          "label": "信用（HYG/IEF）が60日安値割れ",
+          "on": false
+        },
+        {
+          "label": "高配当株ETFが50日線割れ",
+          "on": true
+        },
+        {
+          "label": "日経平均が200日線割れ",
+          "on": true
+        }
+      ]
+    },
+    {
+      "name": "底打ちサイン",
+      "positive": true,
+      "signals": [
+        {
+          "label": "VVIXがVIXより先にピークアウト",
+          "on": false
+        },
+        {
+          "label": "期間構造の逆転が解消",
+          "on": false
+        },
+        {
+          "label": "VIXが30以上（パニック水準）",
+          "on": false
+        }
+      ]
+    },
+    {
+      "name": "回復サイン",
+      "positive": true,
+      "signals": [
+        {
+          "label": "期間構造が平常化（0.90未満）",
+          "on": false
+        },
+        {
+          "label": "VIXが200日線を下回る",
+          "on": false
+        },
+        {
+          "label": "半導体ETFが50日線を回復",
+          "on": false
+        },
+        {
+          "label": "信用（HYG/IEF）が50日線を回復",
+          "on": false
+        }
+      ]
+    },
+    {
+      "name": "天底シグナル",
+      "signals": [
+        {
+          "label": "東証の売買代金が時価総額の1%以上",
+          "on": false
+        },
+        {
+          "label": "Fear & Greedが20以下（陰の極）",
+          "on": true
+        },
+        {
+          "label": "Fear & Greedが70以上（陽の極）",
+          "on": false
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Dow closes below 50,000; Nasdaq falls 2% as Anthropic IPO fails to resuscitate AI trade（CNBC）",
+      "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html"
+    },
+    {
+      "title": "Stock Market Today, Nov. 19: Dow Plunges 1,100 Points as the S&P 500 Suffers Its 6th Straight Day of Losses（The Motley Fool）",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-dow-plunges-1-100-points-as-the-s-and-p-500-suffers-its-6th-straight-day-of-losses/"
+    },
+    {
+      "title": "investingLive Americas FX news wrap 19 Nov: Inflation worries sink stocks",
+      "url": "https://www.louisvelazquez.com/investinglive-americas-fx-news-wrap-19-nov-inflation-worries-sink-stocks/"
+    },
+    {
+      "title": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027（NVIDIA）",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
+    }
+  ]
+}

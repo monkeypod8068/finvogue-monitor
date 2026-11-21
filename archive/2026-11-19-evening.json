@@ -1,0 +1,45 @@
+{
+  "updated": "2026-11-19 23:12",
+  "edition": "夕方版",
+  "us_date": "2026-11-18",
+  "stage": 1,
+  "stage_label": "注意(調整)",
+  "headline": "S&P500が200日線を割り込み、VIXの期間構造は逆転。調整拡大（段階2）まであと一歩だが、クレジットはまだ崩れていない。",
+  "analysis_html": "<p>下げの中心が半導体から指数全体に広がりつつあります。S&amp;P500は2日続けて200日線の下で引け、VIXの期近が期先を上回る「期間構造の逆転」も起きました。短期の不安が最も強い状態です。</p><p>一方で、ハイイールド債と米国債の比率（HYG/IEF）は横ばいで、信用不安は表面化していません。現状は株の調整であって、信用収縮型の暴落ではありません。</p><h3>見ているポイント</h3><ul><li>S&amp;P500が60日安値を下回って引ければ、段階2（調整拡大）に上がります。</li><li>反発してVIXの期間構造が0.97を下回るか、VVIXが基準まで下がれば、底打ちのサインが点きます。</li><li>東証の売買代金は時価総額の0.6%台と細く、投げ売り（セリングクライマックス）はまだ来ていません。</li></ul>",
+  "checkpoints": [
+    {"label": "S&P500と60日安値", "distance": "あと約0.5%", "meaning": "終値で割れれば段階2（調整拡大）"},
+    {"label": "VIX期間構造（VIX/VIX3M）", "distance": "1.011（逆転中）", "meaning": "0.97を下回れば底打ちサイン"},
+    {"label": "VVIX", "distance": "基準まであと約3%", "meaning": "下回れば底打ちサイン（ボラの先行指標がピークアウト）"},
+    {"label": "HYG/IEF（信用）", "distance": "60日安値まで約0.6%", "meaning": "割れて期間構造の逆転が続けば段階3（暴落型）の条件"},
+    {"label": "半導体ETF（SMH）", "distance": "60日安値まで約3%", "meaning": "割れれば二番底を試す展開"}
+  ],
+  "signal_groups": [
+    {"name": "ストレス", "signals": [
+      {"label": "半導体ETFが200日線割れ", "on": true},
+      {"label": "半導体ETFが高値から10%超下落", "on": true},
+      {"label": "S&P500が200日線割れ", "on": true},
+      {"label": "S&P500が60日安値割れ", "on": false},
+      {"label": "VIXが22以上", "on": true},
+      {"label": "VIX期間構造の逆転", "on": true},
+      {"label": "信用（HYG/IEF）が60日安値割れ", "on": false},
+      {"label": "日経平均が200日線割れ", "on": true}
+    ]},
+    {"name": "底打ちサイン", "positive": true, "signals": [
+      {"label": "VVIXがVIXより先にピークアウト", "on": false},
+      {"label": "期間構造の逆転が解消", "on": false},
+      {"label": "VIXが30以上（パニック水準）", "on": false}
+    ]},
+    {"name": "回復サイン", "positive": true, "signals": [
+      {"label": "期間構造が平常化（0.90未満）", "on": false},
+      {"label": "VIXが200日線を下回る", "on": false},
+      {"label": "半導体ETFが50日線を回復", "on": false},
+      {"label": "信用（HYG/IEF）が50日線を回復", "on": false}
+    ]},
+    {"name": "天底シグナル", "signals": [
+      {"label": "東証の売買代金が時価総額の1%以上", "on": false},
+      {"label": "Fear & Greedが20以下（陰の極）", "on": false},
+      {"label": "Fear & Greedが70以上（陽の極）", "on": false}
+    ]}
+  ],
+  "sources": []
+}

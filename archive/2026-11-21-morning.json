@@ -1,0 +1,163 @@
+{
+  "updated": "2026-11-21 08:06",
+  "edition": "朝版",
+  "us_date": "2026-11-20",
+  "stage": 3,
+  "stage_label": "暴落型",
+  "headline": "S&P500が3.7%安、半導体ETFは10.6%安。信用（HYG/IEF）も60日安値を割り、段階3（暴落型）に悪化。",
+  "analysis_html": "<p>11/20の米国市場はAI関連株への売りが加速し、S&amp;P500は−3.7%の6,910、ナスダック総合は−5.3%でした。S&amp;P500は10月の最高値から10%超下げて調整局面入りし、週間では−8.6%です。半導体ETF（SMH）は1日で−10.6%、高値からは約37%下落しています。</p><p>前回からの大きな変化は信用です。HYG/IEFが60日安値を割り込み、VIX/VIX3Mの逆転（1.16）、S&amp;P500の200日線割れと合わせて段階3の条件がそろいました。株と金が同時に急落しており、換金売りの色も濃くなっています。一方で、VIXは35.9と30を超え、Fear &amp; Greedは10と陰の極です。底打ちの条件は一部そろい始めましたが、VVIXはまだ上昇中で、期間構造の逆転も深まっています。</p><p>データの注意：日経平均は11/20の東京終値で、CME日経先物は54,860円とさらに低い水準です。東京市場は23日（月）が祝日のため、次の取引は24日（火）です。</p><h3>見ているポイント</h3><ul><li><b>段階3からの後退：</b>HYG/IEFが約1%戻して60日安値を回復するか、VIX/VIX3Mが1.0未満（約14%低下）になること。</li><li><b>底打ちサイン：</b>VVIXが約15%低下（117前後）、またはVIX/VIX3Mが0.97未満（約16%低下）。</li><li><b>東証の売買代金：</b>時価総額比0.71%。1%に届けば投げ売りによる底の候補。</li><li><b>来週：</b>米国は26日が感謝祭で休場、27日は短縮取引。薄商いで値が振れやすい点に注意。</li></ul>",
+  "checkpoints": [
+    {
+      "label": "信用（HYG/IEF）と60日安値",
+      "distance": "回復まで約1%上昇が必要",
+      "meaning": "回復すれば段階3の条件が外れる"
+    },
+    {
+      "label": "VIX期間構造（VIX/VIX3M）",
+      "distance": "1.16（逆転中）、1.0まで約14%・0.97まで約16%低下",
+      "meaning": "1.0未満で段階3の条件が外れ、0.97未満で底打ちサイン"
+    },
+    {
+      "label": "VVIX",
+      "distance": "138、基準（約117）まで約15%低下が必要",
+      "meaning": "下がればボラの先行指標がピークアウトした底打ちサイン"
+    },
+    {
+      "label": "S&P500と60日安値",
+      "distance": "回復まで約4%上昇が必要（200日線までは約6%）",
+      "meaning": "回復すれば段階2の条件の一つが外れる"
+    },
+    {
+      "label": "半導体ETF（SMH）と60日安値",
+      "distance": "回復まで約11%上昇が必要",
+      "meaning": "回復すれば半導体の安値割れが解消"
+    },
+    {
+      "label": "東証の売買代金÷時価総額",
+      "distance": "0.71%（1%まで約1.4倍の商いが必要）",
+      "meaning": "1%以上なら投げ売りによる底の候補"
+    }
+  ],
+  "signal_groups": [
+    {
+      "name": "ストレス",
+      "signals": [
+        {
+          "label": "半導体ETFが200日線割れ",
+          "on": true
+        },
+        {
+          "label": "半導体ETFが高値から10%超下落",
+          "on": true
+        },
+        {
+          "label": "半導体ETFが60日安値割れ",
+          "on": true
+        },
+        {
+          "label": "S&P500が200日線割れ",
+          "on": true
+        },
+        {
+          "label": "S&P500が60日安値割れ",
+          "on": true
+        },
+        {
+          "label": "VIXが22以上",
+          "on": true
+        },
+        {
+          "label": "VIX期間構造の逆転",
+          "on": true
+        },
+        {
+          "label": "信用（HYG/IEF）が60日安値割れ",
+          "on": true
+        },
+        {
+          "label": "高配当株ETFが50日線割れ",
+          "on": true
+        },
+        {
+          "label": "株安と金急落が同時（換金売り）",
+          "on": true
+        },
+        {
+          "label": "日経平均が200日線割れ",
+          "on": true
+        },
+        {
+          "label": "日経平均が60日安値割れ",
+          "on": true
+        }
+      ]
+    },
+    {
+      "name": "底打ちサイン",
+      "positive": true,
+      "signals": [
+        {
+          "label": "VVIXがVIXより先にピークアウト",
+          "on": false
+        },
+        {
+          "label": "期間構造の逆転が解消",
+          "on": false
+        },
+        {
+          "label": "VIXが30以上（パニック水準）",
+          "on": true
+        }
+      ]
+    },
+    {
+      "name": "回復サイン",
+      "positive": true,
+      "signals": [
+        {
+          "label": "期間構造が平常化（0.90未満）",
+          "on": false
+        },
+        {
+          "label": "VIXが200日線を下回る",
+          "on": false
+        },
+        {
+          "label": "半導体ETFが50日線を回復",
+          "on": false
+        },
+        {
+          "label": "信用（HYG/IEF）が50日線を回復",
+          "on": false
+        }
+      ]
+    },
+    {
+      "name": "天底シグナル",
+      "signals": [
+        {
+          "label": "東証プライムの売買代金が時価総額の1%以上",
+          "on": false
+        },
+        {
+          "label": "Fear & Greedが20以下（陰の極）",
+          "on": true
+        },
+        {
+          "label": "Fear & Greedが70以上（陽の極）",
+          "on": false
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "How major US stock indexes fared Friday 11/20/2026（AP／myMotherLode）",
+      "url": "https://mymotherlode.com/news/national/11327378/how-major-us-stock-indexes-fared-friday-11-20-2026.html"
+    },
+    {
+      "title": "Stock Market Today, November 20, 2026（Eurasia Business News）",
+      "url": "https://eurasiabusinessnews.com/2026/11/20/stock-market-today-november-20-2026-tech-rout-deepens-as-anthropic-stocks-slide/"
+    }
+  ]
+}
