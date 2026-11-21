@@ -1,0 +1,29 @@
+{
+ "groups": [
+  {
+   "name": "市場心理",
+   "items": [
+    {"title": "Fear & Greed Index", "source": "CNN", "url": "https://edition.cnn.com/markets/fear-and-greed",
+     "note": "投資家の恐怖と楽観を0〜100で表す指数。20以下は陰の極、70以上は過熱の目安"}
+   ]
+  },
+  {
+   "name": "米国のマクロ指標",
+   "items": [
+    {"title": "M2（マネーサプライ）", "source": "FRED", "url": "https://fred.stlouisfed.org/series/M2SL",
+     "note": "世の中に出回るお金の量。増加は金融環境の緩み、減少は引き締まりのサイン"},
+    {"title": "失業率", "source": "FRED", "url": "https://fred.stlouisfed.org/series/UNRATE",
+     "note": "景気後退の判定に使われる代表的な指標。底から上がり始めると要注意"},
+    {"title": "NAHB住宅市場指数", "source": "Investing.com", "url": "https://jp.investing.com/economic-calendar/nahb-housing-market-index-198",
+     "note": "住宅建設業者の景況感。景気の変化を先取りしやすい先行指標"}
+   ]
+  },
+  {
+   "name": "企業分析",
+   "items": [
+    {"title": "IR BANK", "source": "IR BANK", "url": "https://irbank.net/",
+     "note": "上場企業の決算・財務データを長期で確認できる"}
+   ]
+  }
+ ]
+}
