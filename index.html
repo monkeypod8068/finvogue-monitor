@@ -41,7 +41,7 @@ html.embed .tabs{margin-top:0}
 .tabs a{padding:8px 14px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;
   border-bottom:3px solid transparent;margin-bottom:-1px}
 .tabs a.cur{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
-.tabs a .ext{font-size:11px;margin-left:3px;opacity:.7}
+.tabs a .ext{margin-left:4px;opacity:.6;vertical-align:1px}
 /* 段階 */
 .stage{margin:16px 0 0;border-radius:12px;padding:16px 18px 14px}
 .stage .lv{font-size:12.5px;font-weight:600;letter-spacing:.06em;opacity:.85}
@@ -275,7 +275,7 @@ html.embed .sig.off{display:none}
       if(EMBED) h.push('<details class="more"><summary>参考にしたニュース</summary>'+src+'</details>');
       else h.push('<h2>参考にしたニュース</h2>'+src);
     }
-    if(EMBED) h.push('<a class="full-link" href="'+FULL_URL+'" target="_blank" rel="noopener">詳しい分析と元のレポートを開く ↗</a>');
+    if(EMBED) h.push('<a class="full-link" href="'+FULL_URL+'" target="_blank" rel="noopener">詳しい分析と元のレポートを開く<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>');
     var app=document.getElementById("app"); app.innerHTML=h.join(""); markTerms(app);
   }
 
@@ -286,8 +286,8 @@ html.embed .sig.off{display:none}
   if(EMBED){
     // 埋め込みでは元のレポートを別タブで開く(埋め込み枠の中で長いページを二重にスクロールさせない)
     tabs.innerHTML='<a class="cur" href="#">分析</a>'+
-      '<a href="'+FILES.morning+'" target="_blank" rel="noopener">朝版レポート<span class="ext">↗</span></a>'+
-      '<a href="'+FILES.evening+'" target="_blank" rel="noopener">夕方版レポート<span class="ext">↗</span></a>';
+      '<a href="'+FILES.morning+'" target="_blank" rel="noopener">朝版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>'+
+      '<a href="'+FILES.evening+'" target="_blank" rel="noopener">夕方版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>';
     tabs.firstChild.addEventListener("click",function(e){e.preventDefault();});
   } else {
     tabs.innerHTML='<a href="#analysis" data-tab="analysis">分析</a>'+
