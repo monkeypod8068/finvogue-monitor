@@ -55,6 +55,20 @@ html.embed .tabs{margin-top:0}
 .scale div.cur{opacity:1;font-weight:700}
 .scale div.past{opacity:.6}
 /* 3行まとめ */
+/* 段階の推移（帯グラフ） */
+.hist{margin:12px 0 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px 10px}
+.hist .ttl{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.hist .ttl b{font-weight:600}
+.hist .bar{display:flex;gap:2px;height:22px;margin:8px 0 4px}
+.hist .bar i{flex:1;border-radius:2px;min-width:0;cursor:default;position:relative}
+.hist .bar i.pv{opacity:.55}
+.hist .bar i:hover,.hist .bar i.sel{outline:2px solid var(--ink);outline-offset:1px;z-index:1}
+.hist .h0{background:#cfe3d6}.hist .h1{background:#e7c35f}.hist .h2{background:#d47a52}.hist .h3{background:#6e1f1f}
+.hist .ax{position:relative;height:16px;font-size:10.5px;color:var(--faint)}
+.hist .ax span{position:absolute;top:0;white-space:nowrap;transform:translateX(-50%)}
+.hist .ax span.l{transform:none}.hist .ax span.r{transform:none;right:0}
+.hist .lg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:var(--muted);margin-top:4px}
+.hist .lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
 .summary{margin:12px 0 0;display:grid;gap:6px}
 .summary div{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
   border-radius:10px;padding:9px 12px;font-size:14.5px;line-height:1.6}
@@ -243,6 +257,7 @@ html.embed .sig.off{display:none}
     var sl=summaryLines(d);
     if(sl.length) h.push('<div class="summary">'+sl.map(function(x){
       return '<div><b>'+esc(x.k)+'</b><span>'+esc(x.v)+'</span></div>';}).join("")+'</div>');
+    h.push('<div id="hist"></div>');
 
     if(d.checkpoints&&d.checkpoints.length){
       var rows=d.checkpoints.map(function(c,i){
@@ -327,9 +342,54 @@ html.embed .sig.off{display:none}
   }
   window.addEventListener("hashchange",show);
 
+  // 段階の推移（直近30営業日）。stage_history.json が無ければ何も表示しない
+  function loadHist(){
+    fetch("stage_history.json?t="+Date.now(),{cache:"no-store"})
+      .then(function(r){if(!r.ok)throw 0;return r.json();})
+      .then(function(j){renderHist((j&&j.days)||[]);}).catch(function(){});
+  }
+  function md(s){var p=String(s).split("-");return (+p[1])+"/"+(+p[2]);}
+  function renderHist(days){
+    var box=document.getElementById("hist");
+    if(!box||days.length<5)return;
+    var n=days.length,last=days[n-1],run=1;
+    for(var i=n-2;i>=0&&days[i].stage===last.stage;i--)run++;
+    var cnt=[0,0,0,0];days.forEach(function(x){cnt[x.stage]++;});
+    var runTxt=(run>=n?n+"日以上":run+"日目");
+    var bars=days.map(function(x,i){
+      var lab=md(x.date)+"　段階"+x.stage+" "+STAGES[x.stage]+(x.provisional?"（暫定）":"");
+      return '<i class="h'+x.stage+(x.provisional?" pv":"")+'" data-i="'+i+'" title="'+esc(lab)+'" aria-label="'+esc(lab)+'"></i>';
+    }).join("");
+    // 目盛り: 最初・最後と、月が変わる日
+    var ax=['<span class="l">'+md(days[0].date)+'</span>'];
+    for(var k=1;k<n-1;k++){
+      if(days[k].date.slice(5,7)!==days[k-1].date.slice(5,7)&&k>3&&k<n-4)
+        ax.push('<span style="left:'+((k+.5)/n*100).toFixed(2)+'%">'+(+days[k].date.slice(5,7))+'月</span>');
+    }
+    ax.push('<span class="r">'+md(last.date)+'</span>');
+    var lg=[0,1,2,3].map(function(i){return '<span><i class="h'+i+'"></i>'+i+' '+STAGES[i]+'（'+cnt[i]+'日）</span>';}).join("");
+    box.className="hist";
+    box.innerHTML='<div class="ttl"><b>段階の推移（直近'+n+'営業日・米国の終値で判定）</b>'+
+      '<span id="hsel">段階'+last.stage+'が続いて'+runTxt+'</span></div>'+
+      '<div class="bar" role="img" aria-label="段階の推移">'+bars+'</div><div class="ax">'+ax.join("")+'</div>'+
+      '<div class="lg">'+lg+'</div>';
+    var sel=document.getElementById("hsel"),def=sel.textContent;
+    box.querySelector(".bar").addEventListener("click",function(e){
+      var t=e.target.closest("i");if(!t)return;
+      box.querySelectorAll(".bar i.sel").forEach(function(x){x.classList.remove("sel");});
+      t.classList.add("sel");sel.textContent=t.getAttribute("aria-label");
+    });
+    box.querySelector(".bar").addEventListener("mouseover",function(e){
+      var t=e.target.closest("i");if(t)sel.textContent=t.getAttribute("aria-label");
+    });
+    box.querySelector(".bar").addEventListener("mouseleave",function(){
+      if(!box.querySelector(".bar i.sel"))sel.textContent=def;
+    });
+  }
+
   fetch("latest.json?t="+Date.now(),{cache:"no-store"})
     .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
-    .then(function(d){render(d);metaText=document.getElementById("meta").textContent;show();})
+    .then(function(d){render(d);metaText=document.getElementById("meta").textContent;show();loadHist();})
     .catch(function(){document.getElementById("app").innerHTML='<div class="err">データを読み込めませんでした。時間をおいて再読み込みしてください。</div>';
       document.getElementById("meta").textContent="";show();});
 })();
