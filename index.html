@@ -6,88 +6,192 @@
 <title>マーケット・ストレス・モニター | FinVogue</title>
 <style>
 :root{
-  --bg:#fbfaf7; --card:#ffffff; --ink:#1c1b19; --muted:#6d6a63; --line:#e7e3da;
-  --s0:#2f7a52; --s0bg:#e8f3ec; --s1:#9a6b00; --s1bg:#fbf1d6;
-  --s2:#b4441e; --s2bg:#fbe7df; --s3:#ffffff; --s3bg:#7a1414;
-  --on:#b4441e; --onbg:#fbe7df; --good:#2f7a52; --goodbg:#e8f3ec;
+  --bg:#fbfaf7; --card:#ffffff; --ink:#1c1b19; --muted:#6d6a63; --faint:#9c988f; --line:#e7e3da;
+  --s0:#2f6b4c; --s0bg:#e6f1ea; --s1:#8a6100; --s1bg:#f8eed3;
+  --s2:#a3401d; --s2bg:#f9e5dc; --s3bg:#6e1f1f;
+  --bad:#b4441e; --badbg:#fbe9e2; --good:#2f6b4c; --goodbg:#e6f1ea;
 }
-@media (prefers-color-scheme:dark){:root{
-  --bg:#151513; --card:#1e1d1b; --ink:#edebe6; --muted:#a19d95; --line:#33312d;
+@media (prefers-color-scheme:dark){html:not(.embed){
+  --bg:#151513; --card:#1e1d1b; --ink:#edebe6; --muted:#a19d95; --faint:#7d7a73; --line:#33312d;
   --s0:#7fd1a3; --s0bg:#1b2d22; --s1:#f0c45a; --s1bg:#33290f; --s2:#ff9a77; --s2bg:#3a1c13;
-  --s3bg:#a3221b; --on:#ff9a77; --onbg:#3a1c13; --good:#7fd1a3; --goodbg:#1b2d22;
+  --s3bg:#7d2420; --bad:#ff9a77; --badbg:#3a1c13; --good:#7fd1a3; --goodbg:#1b2d22;
 }}
+/* 埋め込み時はGoogleサイトの白背景に合わせ、ダークモードでも明るい配色に固定する */
+html.embed{--bg:#ffffff; color-scheme:light}
 *{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP",system-ui,sans-serif;
-  font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
-.wrap{max-width:820px;margin:0 auto;padding:22px 16px 40px}
-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:860px;margin:0 auto;padding:22px 18px 36px}
+html.embed .wrap{padding:6px 14px 20px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;
   border-bottom:2px solid var(--ink);padding-bottom:8px}
 h1{font-size:19px;margin:0;letter-spacing:.04em}
+html.embed header{display:none}
 .meta{font-size:12.5px;color:var(--muted)}
-.stage{margin:18px 0 6px;border-radius:12px;padding:16px 18px}
-.stage .lv{font-size:13px;font-weight:600;letter-spacing:.08em}
-.stage .name{font-size:24px;font-weight:700;margin:2px 0 4px}
-.stage .head{font-size:15px}
+.embed-meta{display:none;font-size:12px;color:var(--muted);text-align:right;margin:0 0 2px}
+html.embed .embed-meta{display:block}
+/* タブ */
+.tabs{display:flex;gap:2px;margin:12px 0 0;border-bottom:1px solid var(--line);
+  overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.tabs::-webkit-scrollbar{display:none}
+html.embed .tabs{margin-top:0}
+.tabs a{padding:8px 14px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;
+  border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs a.cur{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
+.tabs a .ext{font-size:11px;margin-left:3px;opacity:.7}
+/* 段階 */
+.stage{margin:16px 0 0;border-radius:12px;padding:16px 18px 14px}
+.stage .lv{font-size:12.5px;font-weight:600;letter-spacing:.06em;opacity:.85}
+.stage .name{font-size:25px;font-weight:700;margin:2px 0 4px;letter-spacing:.02em}
+.stage .head{font-size:14.5px;line-height:1.7}
 .st0{background:var(--s0bg);color:var(--s0)} .st1{background:var(--s1bg);color:var(--s1)}
-.st2{background:var(--s2bg);color:var(--s2)} .st3{background:var(--s3bg);color:var(--s3)}
-.stage .head{color:var(--ink)} .st3 .head{color:#fff}
-.scale{display:flex;gap:4px;margin:10px 0 0}
-.scale span{flex:1;height:6px;border-radius:3px;background:var(--line)}
-.scale span.f{background:currentColor}
-h2{font-size:15px;margin:28px 0 10px;padding-left:9px;border-left:4px solid var(--ink)}
+.st2{background:var(--s2bg);color:var(--s2)} .st3{background:var(--s3bg);color:#fff}
+.st0 .head,.st1 .head,.st2 .head{color:var(--ink)}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:12px 0 0}
+.scale div{font-size:11px;text-align:center;padding-top:6px;border-top:5px solid currentColor;opacity:.3;white-space:nowrap}
+.scale div.cur{opacity:1;font-weight:700}
+.scale div.past{opacity:.6}
+/* 3行まとめ */
+.summary{margin:12px 0 0;display:grid;gap:6px}
+.summary div{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:9px 12px;font-size:14.5px;line-height:1.6}
+.summary b{flex:none;font-size:12px;color:var(--muted);font-weight:600;min-width:5.6em;padding-top:2px}
+h2{font-size:15px;margin:24px 0 10px;padding-left:9px;border-left:4px solid var(--ink)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .analysis p{margin:0 0 .8em} .analysis ul{margin:.2em 0 .8em;padding-left:1.3em}
 .analysis h3{font-size:14.5px;margin:1em 0 .3em}
 .analysis a{color:inherit}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:12px;color:var(--muted);font-weight:600}
-tr:last-child td{border-bottom:none}
-.dist{white-space:nowrap;font-weight:600}
+details.more{margin-top:10px}
+details.more summary{cursor:pointer;font-size:14px;color:var(--muted);list-style:none;padding:8px 0}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"＋ ";}
+details.more[open] summary::before{content:"－ ";}
+/* 分岐点: PCは表、スマホはカード */
+.cp{display:grid;grid-template-columns:minmax(8em,1.1fr) minmax(9em,1.2fr) 1.4fr;gap:0}
+.cp > div{padding:9px 10px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6;min-width:0;overflow-wrap:anywhere}
+.cp .th{font-size:12px;color:var(--muted);font-weight:600;padding-top:2px}
+.cp .dist{font-weight:700}
+.cp .lab{display:flex;gap:8px;align-items:flex-start}
+.dir{flex:none;font-size:11px;font-weight:700;border-radius:4px;padding:1px 6px;margin-top:2px;white-space:nowrap}
+.dir.bad{color:var(--bad);background:var(--badbg)} .dir.good{color:var(--good);background:var(--goodbg)}
+.cp .row-end{border-bottom:none}
+@media (max-width:620px){
+  .cp{display:block}
+  .cp .th{display:none}
+  .cp > div{border-bottom:none;padding:2px 0}
+  .cp .lab{padding-top:12px;font-weight:600}
+  .cp .dist{font-size:15px}
+  .cp .mean{color:var(--muted);font-size:13.5px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .cp .mean.row-end{border-bottom:none}
+}
+/* シグナル */
 .groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
-.grp h3{font-size:13px;margin:0 0 6px;color:var(--muted);font-weight:600}
-.sig{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;padding:3px 0}
-.dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:.55em;background:var(--line)}
-.sig.on .dot{background:var(--on)} .sig.on{font-weight:600}
-.grp.positive .sig.on .dot{background:var(--good)}
+.grp h3{font-size:13px;margin:0 0 6px;color:var(--muted);font-weight:600;display:flex;justify-content:space-between}
+.grp h3 .cnt{font-variant-numeric:tabular-nums}
+.sig{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;padding:2px 0;line-height:1.55}
+.dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:.5em;border:1.5px solid var(--faint)}
+.sig.on .dot{background:var(--bad);border-color:var(--bad)} .sig.on{font-weight:600}
+.grp.positive .sig.on .dot{background:var(--good);border-color:var(--good)}
 .sig.off{color:var(--muted)}
+html.embed .sig.off{display:none}
+.none{font-size:13px;color:var(--faint)}
+/* 先頭のグループ(ストレス)は横幅いっぱいにして2列で並べ、隣に空白を作らない */
+.groups .grp:first-child{grid-column:1/-1}
+@media (min-width:621px){.groups .grp:first-child .sigs{column-count:2;column-gap:24px}
+  .groups .grp:first-child .sig{break-inside:avoid}}
 .src{font-size:12.5px;color:var(--muted)} .src a{color:inherit}
-.note{font-size:12px;color:var(--muted);margin-top:26px;border-top:1px solid var(--line);padding-top:10px}
-.err{color:var(--muted);padding:30px 0;text-align:center}
-.tabs{display:flex;gap:4px;margin:14px 0 0;border-bottom:1px solid var(--line);overflow-x:auto}
-.tabs a{padding:8px 14px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;
-  border-bottom:3px solid transparent;margin-bottom:-1px}
-.tabs a.cur{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
+/* 用語の解説 */
+.term{border-bottom:1px dotted currentColor;cursor:help}
+.tip{position:fixed;z-index:10;max-width:280px;background:#1c1b19;color:#fff;font-size:12.5px;line-height:1.6;
+  padding:8px 10px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.18);pointer-events:none}
+.full-link{display:block;text-align:center;margin:18px 0 0;padding:11px;border:1px solid var(--line);border-radius:10px;
+  color:var(--ink);text-decoration:none;font-size:14px;background:var(--card)}
+.note{font-size:12px;color:var(--muted);margin-top:22px;border-top:1px solid var(--line);padding-top:10px}
 .rep-meta{font-size:12px;color:var(--muted);margin:12px 0 0}
 .rep-meta a{color:inherit}
-.report-host{display:block;margin:0 -16px}
+.report-host{display:block;margin:0 -18px}
+.err{color:var(--muted);padding:30px 0;text-align:center}
 </style>
+<script>
+  // ?embed=1 で開いたときは、Googleサイトへの埋め込み向けの表示にする
+  if (/[?&]embed=1/.test(location.search)) document.documentElement.classList.add("embed");
+</script>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>マーケット・ストレス・モニター</h1>
-    <div class="meta" id="meta">読み込み中…</div>
+    <div class="meta num" id="meta">読み込み中…</div>
   </header>
-  <nav class="tabs" id="tabs">
-    <a href="#analysis" data-tab="analysis">分析</a>
-    <a href="#morning" data-tab="morning">朝版レポート</a>
-    <a href="#evening" data-tab="evening">夕方版レポート</a>
-  </nav>
+  <div class="embed-meta num" id="emeta"></div>
+  <nav class="tabs" id="tabs"></nav>
   <div id="app"><div class="err">データを読み込んでいます…</div></div>
   <div id="report" hidden></div>
   <div class="note">
-    S&amp;P500・半導体・ボラティリティ・クレジット・日本株の動きを機械的に判定し、その日の材料とあわせて整理したものです。
-    投資判断はご自身の責任で行ってください。本ページは投資助言ではありません。
+    S&amp;P500・半導体・ボラティリティ・信用・日本株の動きを機械的に判定し、その日の材料とあわせて整理したものです。
+    点線の付いた用語は、タップ（マウスを重ねる）と説明が出ます。投資判断はご自身の責任で行ってください。本ページは投資助言ではありません。
   </div>
 </div>
+<div class="tip" id="tip" hidden></div>
 <script>
 (function(){
-  var STAGES=["平常","注意(調整)","調整拡大","暴落型"];
+  var EMBED = document.documentElement.classList.contains("embed");
+  var STAGES=["平常","注意","調整拡大","暴落型"];
+  var FULL_URL = location.href.split("?")[0].split("#")[0];
+  var GLOSSARY = {
+    "VIX":"S&P500の今後30日の値動きの大きさを、オプション価格から逆算した指数。「恐怖指数」とも呼ばれ、20前後が平常、30以上はパニック水準。",
+    "VVIX":"VIXそのものの値動きの大きさを表す指数。VIXより先にピークを付けることが多く、底打ちの先行サインとして使う。",
+    "VIX3M":"VIXの3か月版。VIXがVIX3Mを上回る（比率が1を超える）と、短期の恐怖が強い「期間構造の逆転」の状態。",
+    "期間構造":"VIX（30日）とVIX3M（3か月）の比率。平常時は1未満。1を超えると短期の恐怖が強く、0.97を下回って戻ると底打ちのサイン。",
+    "HYG/IEF":"ハイイールド債（低格付けの社債）ETFと米国債ETFの比率。下がるほど信用不安が強い。株の調整が信用収縮に広がっているかを見る。",
+    "60日安値":"過去60営業日の安値（日中の安値ベース）。これを割り込むと、下落トレンドが一段進んだと判断する。",
+    "200日線":"過去200営業日の終値の平均。長期の上昇・下降トレンドの分かれ目としてよく使われる。",
+    "50日線":"過去50営業日の終値の平均。中期のトレンドの目安。",
+    "Fear & Greed":"CNNが算出する投資家心理の指数（0〜100）。20以下は極端な恐怖（陰の極）、70以上は過熱（陽の極）の目安。",
+    "半導体ETF":"米国の主要な半導体株をまとめたETF（SMH）。AI関連の相場の温度計として見ている。",
+    "高配当株ETF":"米国の高配当株ETF（SCHD）。守りの資産に資金が逃げているかを見る。",
+    "売買代金":"東証プライム市場の1日の売買代金。時価総額に対して1%以上は投げ売りが出た日の目安で、下落局面では底の候補。"
+  };
+  var TERMS = Object.keys(GLOSSARY).sort(function(a,b){return b.length-a.length;});
+
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-  // 分析本文は限られたタグだけを通す(<p><ul><li><b><strong><h3><br><a href>)
+  // 用語に点線を付ける(テキストだけを対象に、各用語は1ブロックにつき最初の1回だけ)
+  function markTerms(root){
+    var re=new RegExp("("+TERMS.map(function(t){return t.replace(/[.*+?^${}()|[\]\\\/]/g,"\\$&");}).join("|")+")");
+    var used={};   // ページ全体で各用語の最初の1回だけに付ける(点線だらけにしない)
+    root.querySelectorAll(".head,.summary span,.cp .lab span,.sig span:last-child,.analysis").forEach(function(block){
+      var walker=document.createTreeWalker(block,NodeFilter.SHOW_TEXT,null), nodes=[], n;
+      while((n=walker.nextNode())){ if(!n.parentNode.closest(".term,a")) nodes.push(n); }
+      nodes.forEach(function(node){
+        var parts=node.nodeValue.split(re); if(parts.length<2) return;
+        var frag=document.createDocumentFragment();
+        parts.forEach(function(p){
+          if(GLOSSARY[p] && !used[p]){ used[p]=1; var s=document.createElement("span"); s.className="term"; s.tabIndex=0;
+            s.setAttribute("data-tip",GLOSSARY[p]); s.textContent=p; frag.appendChild(s); }
+          else if(p) frag.appendChild(document.createTextNode(p));
+        });
+        node.parentNode.replaceChild(frag,node);
+      });
+    });
+  }
+  var tip=document.getElementById("tip");
+  function showTip(el){ tip.textContent=el.getAttribute("data-tip"); tip.hidden=false;
+    var r=el.getBoundingClientRect(), w=Math.min(280, window.innerWidth-20);
+    tip.style.maxWidth=w+"px";
+    var left=Math.max(10, Math.min(r.left, window.innerWidth-w-10));
+    var top=r.bottom+6; tip.style.left=left+"px"; tip.style.top=top+"px";
+    var th=tip.offsetHeight; if(top+th>window.innerHeight-8) tip.style.top=Math.max(8,r.top-th-6)+"px"; }
+  document.addEventListener("mouseover",function(e){var t=e.target.closest&&e.target.closest(".term"); if(t) showTip(t);});
+  document.addEventListener("mouseout",function(e){if(e.target.closest&&e.target.closest(".term")) tip.hidden=true;});
+  document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest(".term");
+    if(t){showTip(t); e.preventDefault();} else tip.hidden=true;});
+  window.addEventListener("scroll",function(){tip.hidden=true;},true);
+
+  // 分析本文は限られたタグだけを通す
   function safeHtml(h){
     var t=document.createElement("template"); t.innerHTML=String(h||"");
     var ok={P:1,UL:1,OL:1,LI:1,B:1,STRONG:1,EM:1,H3:1,BR:1,A:1,SPAN:1};
@@ -104,46 +208,93 @@ tr:last-child td{border-bottom:none}
     })(t.content);
     var d=document.createElement("div"); d.appendChild(t.content); return d.innerHTML;
   }
+  // 分岐点の方向(悪化/改善)。データに dir があればそれを優先し、なければ文章から判定
+  function direction(c){
+    if(c.dir==="bad"||c.dir==="good") return c.dir;
+    var m=String(c.meaning||"");
+    if(/回復|解消|外れ|改善|底打ち|底の候補|平常化|戻/.test(m)) return "good";
+    if(/割れ|割り込|悪化|段階[23]|二番底|遅れ|条件がそろう/.test(m)) return "bad";
+    return "";
+  }
+  function summaryLines(d){
+    var labels=["今の状況","次の焦点","見るべき数字"];
+    if(Array.isArray(d.summary) && d.summary.length){
+      return d.summary.slice(0,3).map(function(s,i){
+        if(s && typeof s==="object") return {k:s.label||labels[i]||"", v:s.text||""};
+        return {k:labels[i]||"", v:s};
+      });
+    }
+    // summary が無い旧形式のデータ: 分岐点の先頭から組み立てる
+    var c=(d.checkpoints||[])[0]; if(!c) return [];
+    return [{k:"次の焦点",v:c.label+"："+c.meaning},{k:"見るべき数字",v:c.label+" — "+c.distance}];
+  }
+
   function render(d){
     var s=Math.max(0,Math.min(3,d.stage|0));
-    document.getElementById("meta").textContent=
-      "更新 "+(d.updated||"")+(d.edition?"（"+d.edition+"）":"")+(d.us_date?" ／ 米国の基準日 "+d.us_date:"");
+    var metaTxt="更新 "+(d.updated||"")+(d.edition?"（"+d.edition+"）":"")+(d.us_date?" ／ 米国の基準日 "+d.us_date:"");
+    document.getElementById("meta").textContent=metaTxt;
+    document.getElementById("emeta").textContent=metaTxt;
     var h=[];
-    h.push('<section class="stage st'+s+'"><div class="lv">現在の判定　段階 '+s+' / 3</div>'+
-      '<div class="name">'+esc(d.stage_label||STAGES[s])+'</div>'+
+    h.push('<section class="stage st'+s+'"><div class="lv">現在の判定（4段階）</div>'+
+      '<div class="name">段階'+s+'　'+esc(d.stage_label||STAGES[s])+'</div>'+
       '<div class="head">'+esc(d.headline)+'</div>'+
-      '<div class="scale">'+[0,1,2,3].map(function(i){return '<span class="'+(i<=s?"f":"")+'"></span>';}).join("")+'</div></section>');
-    if(d.analysis_html){h.push('<h2>今日の見方</h2><div class="card analysis">'+safeHtml(d.analysis_html)+'</div>');}
+      '<div class="scale">'+[0,1,2,3].map(function(i){
+        return '<div class="'+(i===s?"cur":(i<s?"past":""))+'">'+i+' '+STAGES[i]+'</div>';}).join("")+'</div></section>');
+    var sl=summaryLines(d);
+    if(sl.length) h.push('<div class="summary">'+sl.map(function(x){
+      return '<div><b>'+esc(x.k)+'</b><span>'+esc(x.v)+'</span></div>';}).join("")+'</div>');
+
     if(d.checkpoints&&d.checkpoints.length){
-      h.push('<h2>次の分岐点</h2><div class="card"><table><thead><tr><th>見ているもの</th><th>距離</th><th>超えたら</th></tr></thead><tbody>'+
-        d.checkpoints.map(function(c){return '<tr><td>'+esc(c.label)+'</td><td class="dist">'+esc(c.distance)+'</td><td>'+esc(c.meaning)+'</td></tr>';}).join("")+
-        '</tbody></table></div>');
+      var rows=d.checkpoints.map(function(c,i){
+        var dir=direction(c), last=(i===d.checkpoints.length-1)?" row-end":"";
+        var badge=dir?'<span class="dir '+dir+'">'+(dir==="bad"?"悪化":"改善")+'</span>':'';
+        return '<div class="lab'+last+'">'+badge+'<span>'+esc(c.label)+'</span></div>'+
+               '<div class="dist num'+last+'">'+esc(c.distance)+'</div>'+
+               '<div class="mean'+last+'">'+esc(c.meaning)+'</div>';
+      }).join("");
+      h.push('<h2>次の分岐点</h2><div class="card"><div class="cp">'+
+        '<div class="th">見ているもの</div><div class="th">距離</div><div class="th">超えたら</div>'+rows+'</div></div>');
     }
     if(d.signal_groups&&d.signal_groups.length){
       h.push('<h2>シグナルの点灯状況</h2><div class="groups">'+d.signal_groups.map(function(g){
-        return '<div class="card grp'+(g.positive?" positive":"")+'"><h3>'+esc(g.name)+'</h3>'+
-          (g.signals||[]).map(function(x){return '<div class="sig '+(x.on?"on":"off")+'"><span class="dot"></span><span>'+esc(x.label)+'</span></div>';}).join("")+'</div>';
+        var sigs=g.signals||[], on=sigs.filter(function(x){return x.on;}).length;
+        return '<div class="card grp'+(g.positive?" positive":"")+'"><h3><span>'+esc(g.name)+'</span><span class="cnt">'+on+' / '+sigs.length+' 点灯</span></h3>'+
+          '<div class="sigs">'+sigs.map(function(x){return '<div class="sig '+(x.on?"on":"off")+'"><span class="dot"></span><span>'+esc(x.label)+'</span></div>';}).join("")+'</div>'+
+          (EMBED&&on===0?'<div class="none">点灯なし</div>':'')+'</div>';
       }).join("")+'</div>');
+    }
+    if(d.analysis_html){
+      var body='<div class="card analysis">'+safeHtml(d.analysis_html)+'</div>';
+      if(EMBED) h.push('<details class="more"><summary>今日の見方（解説）を読む</summary>'+body+'</details>');
+      else h.push('<h2>今日の見方</h2>'+body);
     }
     if(d.sources&&d.sources.length){
-      h.push('<h2>参考にしたニュース</h2><div class="card src">'+d.sources.map(function(x){
+      var src='<div class="card src">'+d.sources.map(function(x){
         return /^https?:\/\//.test(x.url||"")?'<div><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a></div>':'<div>'+esc(x.title)+'</div>';
-      }).join("")+'</div>');
+      }).join("")+'</div>';
+      if(EMBED) h.push('<details class="more"><summary>参考にしたニュース</summary>'+src+'</details>');
+      else h.push('<h2>参考にしたニュース</h2>'+src);
     }
-    document.getElementById("app").innerHTML=h.join("");
+    if(EMBED) h.push('<a class="full-link" href="'+FULL_URL+'" target="_blank" rel="noopener">詳しい分析と元のレポートを開く ↗</a>');
+    var app=document.getElementById("app"); app.innerHTML=h.join(""); markTerms(app);
   }
-  var DATA=null, metaText="";
-  fetch("latest.json?t="+Date.now(),{cache:"no-store"})
-    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
-    .then(function(d){DATA=d;render(d);metaText=document.getElementById("meta").textContent;show();})
-    .catch(function(){document.getElementById("app").innerHTML='<div class="err">データを読み込めませんでした。時間をおいて再読み込みしてください。</div>';
-      document.getElementById("meta").textContent="";show();});
 
-  // ---- 元のHTMLレポート(朝版・夕方版)をページ内に表示する ----
-  // iframeを入れ子にしないよう、Shadow DOMに読み込んでレポート側のCSSを閉じ込める
+  // ---- タブ ----
   var FILES={morning:"report_morning.html",evening:"report_evening.html"};
   var LABEL={morning:"朝版",evening:"夕方版"};
-  var cache={};
+  var tabs=document.getElementById("tabs");
+  if(EMBED){
+    // 埋め込みでは元のレポートを別タブで開く(埋め込み枠の中で長いページを二重にスクロールさせない)
+    tabs.innerHTML='<a class="cur" href="#">分析</a>'+
+      '<a href="'+FILES.morning+'" target="_blank" rel="noopener">朝版レポート<span class="ext">↗</span></a>'+
+      '<a href="'+FILES.evening+'" target="_blank" rel="noopener">夕方版レポート<span class="ext">↗</span></a>';
+    tabs.firstChild.addEventListener("click",function(e){e.preventDefault();});
+  } else {
+    tabs.innerHTML='<a href="#analysis" data-tab="analysis">分析</a>'+
+      '<a href="#morning" data-tab="morning">朝版レポート</a><a href="#evening" data-tab="evening">夕方版レポート</a>';
+  }
+
+  var metaText="", cache={};
   function loadReport(tab){
     var host=document.getElementById("report");
     host.innerHTML='<div class="err">レポートを読み込んでいます…</div>';
@@ -166,14 +317,21 @@ tr:last-child td{border-bottom:none}
       host.innerHTML='<div class="err">'+esc(LABEL[tab])+'のレポートを読み込めませんでした。</div>';});
   }
   function show(){
+    if(EMBED) return;
     var tab=(location.hash||"#analysis").slice(1); if(!FILES[tab]&&tab!=="analysis")tab="analysis";
     Array.prototype.forEach.call(document.querySelectorAll("#tabs a"),function(a){
       a.classList.toggle("cur",a.getAttribute("data-tab")===tab);});
     var app=document.getElementById("app"), rep=document.getElementById("report");
-    if(tab==="analysis"){app.hidden=false;rep.hidden=true;document.getElementById("meta").textContent=metaText;}
+    if(tab==="analysis"){app.hidden=false;rep.hidden=true;if(metaText)document.getElementById("meta").textContent=metaText;}
     else{app.hidden=true;rep.hidden=false;loadReport(tab);}
   }
   window.addEventListener("hashchange",show);
+
+  fetch("latest.json?t="+Date.now(),{cache:"no-store"})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(function(d){render(d);metaText=document.getElementById("meta").textContent;show();})
+    .catch(function(){document.getElementById("app").innerHTML='<div class="err">データを読み込めませんでした。時間をおいて再読み込みしてください。</div>';
+      document.getElementById("meta").textContent="";show();});
 })();
 </script>
 </body>
