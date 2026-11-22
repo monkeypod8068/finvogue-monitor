@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="assets/site.css">
 <title>このページについて | FinVogue</title>
@@ -73,7 +73,7 @@ ul{margin:8px 0;padding-left:1.3em}li{margin:4px 0}
 <p>データは提供元の都合で遅れたり、後から修正されたりすることがあります。取引時間中や引け直後に取得した値は確定値ではないことがあり、その場合はレポートの「データの注意」欄に記載します。</p>
 
 <h3>プライバシー</h3>
-<p>本サイトは、アクセス解析・広告・Cookieを使用していません。外部のフォントやスクリプトも読み込んでいません。外部サイトへのリンクを開く際は、移動元のページの情報を送らない設定にしています。</p>
+<p>本サイトは、閲覧数を把握するために、Cookieを使わず個人を特定しない方式のアクセス解析を利用しています。訪問者を個別に追跡することはなく、広告も表示していません。アクセス解析以外の外部のフォントやスクリプトは読み込んでいません。外部サイトへのリンクを開く際は、移動元のページの情報を送らない設定にしています。</p>
 
 <h2 id="disclaimer">免責事項</h2>
 <div class="box"><ul>
@@ -89,5 +89,6 @@ ul{margin:8px 0;padding-left:1.3em}li{margin:4px 0}
 </ul></div>
 </main>
 <footer class="site-ft"><span>© FinVogue</span><span>本サイトは情報提供を目的としたもので、投資助言ではありません。<a href="about.html#disclaimer">免責事項</a></span></footer>
+<!-- Cloudflare Web Analytics（Cookieを使わないアクセス数の計測） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53d737177417465da31ccee3e11a5c7b"}'></script>
 </body>
 </html>
