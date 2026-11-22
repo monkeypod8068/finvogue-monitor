@@ -21,7 +21,8 @@ a.item{display:flex;flex-direction:column;gap:4px;padding:14px 16px 13px;backgro
 a.item:hover{border-color:var(--ink);background:var(--hover)}
 a.item:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .top{display:flex;align-items:center;gap:8px}
-.src{font-size:10.5px;letter-spacing:.04em;font-weight:700;padding:1px 7px;border-radius:4px;white-space:nowrap}
+.src{font-size:11px;letter-spacing:.03em;font-weight:600;color:var(--muted);white-space:nowrap}
+.src::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:6px;vertical-align:1px;opacity:.75}
 .title{font-weight:700;font-size:15px;line-height:1.45;padding-right:18px}
 .note{font-size:12.5px;color:var(--muted);line-height:1.6}
 .ext{position:absolute;top:15px;right:14px;color:var(--faint)}
@@ -33,9 +34,6 @@ a.item:hover .ext{color:var(--ink)}
 <div class="wrap" id="app"></div>
 <script>
 (function(){
-  // 情報源ごとの色（名前から決める。新しい情報源は自動でグレー）
-  var COLORS={"CNN":["#fdecec","#b42318"],"FRED":["#e8f0fb","#1f4f8f"],"Investing.com":["#fff3df","#8a5300"],
-    "IR BANK":["#e6eefb","#1d4fa3"],"日本取引所":["#e8f4ee","#2f6b4c"]};
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
   function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:"#";}
@@ -45,9 +43,8 @@ a.item:hover .ext{color:var(--ink)}
     (d.groups||[]).forEach(function(g){
       h.push('<h2>'+esc(g.name)+'<span class="n">'+(g.items||[]).length+'</span></h2><div class="grid">');
       (g.items||[]).forEach(function(it){
-        var c=COLORS[it.source]||["#f0eee9","#55524c"];
         h.push('<a class="item" href="'+esc(safeUrl(it.url))+'" target="_blank" rel="noopener noreferrer">'+ICON+
-          '<div class="top"><span class="src" style="background:'+c[0]+';color:'+c[1]+'">'+esc(it.source||"")+'</span></div>'+
+          '<div class="top"><span class="src">'+esc(it.source||"")+'</span></div>'+
           '<div class="title">'+esc(it.title)+'</div>'+
           (it.note?'<div class="note">'+esc(it.note)+'</div>':'')+'</a>');
       });

@@ -1,28 +1,44 @@
 {
  "groups": [
   {
-   "name": "市場心理",
+   "name": "市場心理・リスク",
    "items": [
     {"title": "Fear & Greed Index", "source": "CNN", "url": "https://edition.cnn.com/markets/fear-and-greed",
-     "note": "投資家の恐怖と楽観を0〜100で表す指数。20以下は陰の極、70以上は過熱の目安"}
+     "note": "投資家の恐怖と楽観を0〜100で表す指数。20以下は陰の極、70以上は過熱の目安"},
+    {"title": "AAII 個人投資家センチメント", "source": "AAII", "url": "https://www.aaii.com/sentimentsurvey",
+     "note": "米国の個人投資家の強気・中立・弱気の割合（毎週木曜）。極端な偏りは逆張りの目安"},
+    {"title": "日経平均VI（ボラティリティー・インデックス）", "source": "日本経済新聞社", "url": "https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi",
+     "note": "日本版の恐怖指数。平時は20〜30程度で推移し、日経平均の急落時に急上昇する"},
+    {"title": "ハイイールド債スプレッド", "source": "FRED", "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+     "note": "低格付け社債の上乗せ金利。広がると信用不安が高まっているサイン"},
+    {"title": "CME FedWatch", "source": "CME Group", "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+     "note": "金利先物から計算した、次回以降のFOMCで利上げ・据え置き・利下げになる確率"}
    ]
   },
   {
-   "name": "米国のマクロ指標",
+   "name": "米国の経済指標",
    "items": [
-    {"title": "M2（マネーサプライ）", "source": "FRED", "url": "https://fred.stlouisfed.org/series/M2SL",
+    {"title": "経済指標カレンダー", "source": "Investing.com", "url": "https://jp.investing.com/economic-calendar",
+     "note": "今週・来週の発表予定と予想値。雇用統計・CPI・FOMCなどの日程確認に"},
+    {"title": "M2（マネーサプライ・週次）", "source": "FRED", "url": "https://fred.stlouisfed.org/series/WM2NS",
      "note": "世の中に出回るお金の量。増加は金融環境の緩み、減少は引き締まりのサイン"},
     {"title": "失業率", "source": "FRED", "url": "https://fred.stlouisfed.org/series/UNRATE",
      "note": "景気後退の判定に使われる代表的な指標。底から上がり始めると要注意"},
-    {"title": "NAHB住宅市場指数", "source": "Investing.com", "url": "https://jp.investing.com/economic-calendar/nahb-housing-market-index-198",
+    {"title": "NAHB住宅市場指数", "source": "Investing.com", "url": "https://jp.investing.com/economic-calendar/nahb-housing-market-index-218",
      "note": "住宅建設業者の景況感。景気の変化を先取りしやすい先行指標"}
    ]
   },
   {
-   "name": "企業分析",
+   "name": "日本の需給・景気",
    "items": [
-    {"title": "IR BANK", "source": "IR BANK", "url": "https://irbank.net/",
-     "note": "上場企業の決算・財務データを長期で確認できる"}
+    {"title": "信用残の推移", "source": "トレーダーズ・ウェブ", "url": "https://www.traders.co.jp/margin_derivatives/margin_transition",
+     "note": "信用買い残・売り残と信用倍率の推移。買い残の積み上がりは将来の売り圧力"},
+    {"title": "日銀短観", "source": "日本銀行", "url": "https://www.boj.or.jp/statistics/tk/index.htm",
+     "note": "日銀が四半期ごとに公表する企業の景況感。大企業・製造業の業況判断が注目点"},
+    {"title": "景気統計", "source": "内閣府", "url": "https://www.esri.cao.go.jp/jp/stat/menu.html",
+     "note": "景気動向指数・GDPなど、内閣府が公表する景気統計の一覧"},
+    {"title": "公的年金（GPIF）の運用状況", "source": "GPIF", "url": "https://www.gpif.go.jp/operation/the-latest-results.html",
+     "note": "国内外の株式・債券の運用実績と資産構成。四半期ごとに公表"}
    ]
   }
  ]
