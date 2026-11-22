@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/site.css">
 <title>マーケット・ストレス・モニター | FinVogue</title>
 <style>
 :root{
@@ -26,10 +29,10 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .num{font-variant-numeric:tabular-nums}
 .wrap{max-width:860px;margin:0 auto;padding:22px 18px 36px}
 html.embed .wrap{padding:6px 14px 20px}
-header{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;
+.wrap>header{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;
   border-bottom:2px solid var(--ink);padding-bottom:8px}
 h1{font-size:19px;margin:0;letter-spacing:.04em}
-html.embed header{display:none}
+html.embed .wrap>header{display:none}
 .meta{font-size:12.5px;color:var(--muted)}
 .embed-meta{display:none;font-size:12px;color:var(--muted);text-align:right;margin:0 0 2px}
 html.embed .embed-meta{display:block}
@@ -135,6 +138,7 @@ html.embed .sig.off{display:none}
 </script>
 </head>
 <body>
+<header class="site-hd"><div class="in"><a class="brand" href="index.html">FinVogue</a><nav class="site-nav" aria-label="サイト内メニュー"><a href="index.html" aria-current="page"><span class="lg">マーケット・ストレス・</span>モニター</a><a href="links.html"><span class="lg">マーケット・</span>ダッシュボード</a><a href="about.html">このページについて</a></nav></div></header>
 <div class="wrap">
   <header>
     <h1>マーケット・ストレス・モニター</h1>
@@ -285,12 +289,12 @@ html.embed .sig.off{display:none}
     }
     if(d.sources&&d.sources.length){
       var src='<div class="card src">'+d.sources.map(function(x){
-        return /^https?:\/\//.test(x.url||"")?'<div><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a></div>':'<div>'+esc(x.title)+'</div>';
+        return /^https?:\/\//.test(x.url||"")?'<div><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title)+'</a></div>':'<div>'+esc(x.title)+'</div>';
       }).join("")+'</div>';
       if(EMBED) h.push('<details class="more"><summary>参考にしたニュース</summary>'+src+'</details>');
       else h.push('<h2>参考にしたニュース</h2>'+src);
     }
-    if(EMBED) h.push('<a class="full-link" href="'+FULL_URL+'" target="_blank" rel="noopener">詳しい分析と元のレポートを開く<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>');
+    if(EMBED) h.push('<a class="full-link" href="'+FULL_URL+'" target="_blank" rel="noopener noreferrer">詳しい分析と元のレポートを開く<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>');
     var app=document.getElementById("app"); app.innerHTML=h.join(""); markTerms(app);
   }
 
@@ -301,8 +305,8 @@ html.embed .sig.off{display:none}
   if(EMBED){
     // 埋め込みでは元のレポートを別タブで開く(埋め込み枠の中で長いページを二重にスクロールさせない)
     tabs.innerHTML='<a class="cur" href="#">分析</a>'+
-      '<a href="'+FILES.morning+'" target="_blank" rel="noopener">朝版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>'+
-      '<a href="'+FILES.evening+'" target="_blank" rel="noopener">夕方版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>';
+      '<a href="'+FILES.morning+'" target="_blank" rel="noopener noreferrer">朝版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>'+
+      '<a href="'+FILES.evening+'" target="_blank" rel="noopener noreferrer">夕方版レポート<svg class="ext" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>';
     tabs.firstChild.addEventListener("click",function(e){e.preventDefault();});
   } else {
     tabs.innerHTML='<a href="#analysis" data-tab="analysis">分析</a>'+
@@ -323,7 +327,7 @@ html.embed .sig.off{display:none}
       doc.querySelectorAll("script,style,link").forEach(function(x){x.remove();});
       var title=(doc.querySelector("h1")||{}).textContent||"";
       host.innerHTML='<div class="rep-meta">'+esc(LABEL[tab])+'の元レポート'+
-        ' ／ <a href="'+FILES[tab]+'" target="_blank" rel="noopener">別のタブで開く</a></div>';
+        ' ／ <a href="'+FILES[tab]+'" target="_blank" rel="noopener noreferrer">別のタブで開く</a></div>';
       var box=document.createElement("div"); box.className="report-host"; host.appendChild(box);
       var root=box.attachShadow({mode:"open"});
       root.innerHTML="<style>"+css+"\n:host{display:block}</style><div class='rbody'>"+doc.body.innerHTML+"</div>";
@@ -394,5 +398,6 @@ html.embed .sig.off{display:none}
       document.getElementById("meta").textContent="";show();});
 })();
 </script>
+<footer class="site-ft"><span>© FinVogue</span><span>本サイトは情報提供を目的としたもので、投資助言ではありません。<a href="about.html#disclaimer">免責事項</a></span></footer>
 </body>
 </html>

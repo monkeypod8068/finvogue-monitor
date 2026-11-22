@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/site.css">
+<title>このページについて | FinVogue</title>
+<style>
+:root{--bg:#fff;--ink:#1c1b19;--muted:#6d6a63;--faint:#9c988f;--line:#e7e3da;--soft:#faf8f3;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP",system-ui,sans-serif;
+  font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
+.wrap{max-width:760px;margin:0 auto;padding:22px 18px 30px}
+h1{font-size:19px;margin:0 0 6px;letter-spacing:.04em;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+h2{font-size:17px;margin:40px 0 4px;letter-spacing:.03em}
+h3{font-size:15px;margin:26px 0 6px;padding-left:10px;border-left:4px solid var(--ink);line-height:1.4}
+p{margin:8px 0}
+ul{margin:8px 0;padding-left:1.3em}li{margin:4px 0}
+.lead{color:var(--muted);font-size:14px}
+.stages{display:grid;gap:8px;margin:12px 0}
+.st{display:grid;grid-template-columns:9.5em 1fr;gap:4px 14px;align-items:start;padding:12px 14px;border:1px solid var(--line);border-radius:10px}
+.st b{display:flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}
+.st b i{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
+.st span{font-size:14px;color:#3d3b37}
+.h0{background:#cfe3d6}.h1{background:#e7c35f}.h2{background:#d47a52}.h3{background:#6e1f1f}
+.box{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:6px 18px}
+.box li{font-size:14px}
+@media (max-width:620px){.st{grid-template-columns:1fr}.wrap{padding:18px 14px 24px}}
+</style>
+</head>
+<body>
+<header class="site-hd"><div class="in"><a class="brand" href="index.html">FinVogue</a><nav class="site-nav" aria-label="サイト内メニュー"><a href="index.html"><span class="lg">マーケット・ストレス・</span>モニター</a><a href="links.html"><span class="lg">マーケット・</span>ダッシュボード</a><a href="about.html" aria-current="page">このページについて</a></nav></div></header>
+<main class="wrap">
+<h1>このページについて</h1>
+
+<h3>マーケット・ストレス・モニターとは</h3>
+<p>米国株・半導体・ボラティリティ（恐怖指数）・信用市場・日本株の動きを毎日自動で集計し、相場のストレスがどの程度高まっているかを判定するページです。</p>
+<p>大きな下落の前には、株価が崩れるより先に、恐怖指数・信用市場・景気に左右されにくい銘柄に変化が出ることがよくあります。こうした複数の指標を同じ基準で毎日確認し、「いま市場がどの段階にあるか」と「次にどこを見ればよいか」を、なるべく早く、感情を交えずに把握することがこのページの目的です。</p>
+
+<h3>更新のタイミング</h3>
+<ul>
+<li><b>朝版</b>（日本時間 火〜土 8時ごろ）：前日の米国市場の終値をもとに判定します。判定は、この朝版が基本です。</li>
+<li><b>夕方版</b>（日本時間 月〜金 19時半ごろ）：東京市場の引けと、米国市場が始まる前の先物などの状況を確認します。米国の指標は前日の終値のままです。</li>
+<li>日本・米国の祝日や、データ提供元の不具合などで、更新が遅れたり休んだりすることがあります。</li>
+</ul>
+
+<h3>判定の仕組み（4段階）</h3>
+<div class="stages">
+<div class="st"><b><i class="h0"></i>段階0　平常</b><span>下の条件のどれにも当てはまらない状態です。</span></div>
+<div class="st"><b><i class="h1"></i>段階1　注意</b><span>半導体株が200日線を割る、半導体株が高値から10%超下落する、S&amp;P500が60日安値を割る、VIXが200日線を超える、などのいずれかに当てはまる状態です。</span></div>
+<div class="st"><b><i class="h2"></i>段階2　調整拡大</b><span>S&amp;P500か半導体株が60日安値を割り、なおかつVIXが22以上になっているか、VIXの期間構造が逆転している状態です。</span></div>
+<div class="st"><b><i class="h3"></i>段階3　暴落型</b><span>信用市場（ハイイールド債／米国債）が60日安値を割り、VIXの期間構造が逆転し、なおかつ高配当株かS&amp;P500の下落が広がっている状態です。</span></div>
+</div>
+<p>このほか、下落が終わりに近づくと出やすい「底打ちサイン」、落ち着きを取り戻すときの「回復サイン」、市場全体が極端な恐怖や楽観に傾いたときの「天底シグナル」も表示しています。</p>
+<p>判定はあらかじめ決めた数値の条件で機械的に行っています。条件は、検証や見直しに応じて変更することがあります。</p>
+
+<h3>「分析」と「元のレポート」</h3>
+<ul>
+<li><b>元のレポート</b>（朝版・夕方版のタブ）は、プログラムが計算した数値と判定をそのまま表示したものです。</li>
+<li><b>分析</b>は、そのレポートと当日のニュースをもとに、AIが要点・次の分岐点・背景を文章にまとめたものです。自動で作成・公開しており、人による事前の確認は行っていません。</li>
+</ul>
+
+<h3>使用しているデータ</h3>
+<ul>
+<li>株価・指数・為替・先物など：公開されている市場データ</li>
+<li>市場心理を示す指数（投資家の恐怖と楽観の度合いを0〜100で表したもの）：公開されている値</li>
+<li>東証プライム市場の売買代金・時価総額：公表されている統計</li>
+</ul>
+<p>データは提供元の都合で遅れたり、後から修正されたりすることがあります。取引時間中や引け直後に取得した値は確定値ではないことがあり、その場合はレポートの「データの注意」欄に記載します。</p>
+
+<h3>プライバシー</h3>
+<p>本サイトは、アクセス解析・広告・Cookieを使用していません。外部のフォントやスクリプトも読み込んでいません。外部サイトへのリンクを開く際は、移動元のページの情報を送らない設定にしています。</p>
+
+<h2 id="disclaimer">免責事項</h2>
+<div class="box"><ul>
+<li>本サイトは、市場の状況を整理するための<b>情報提供のみ</b>を目的としています。特定の金融商品の売買を勧めるものではなく、投資助言・勧誘を行うものでもありません。</li>
+<li>掲載している判定・シグナル・分析は、過去のデータと機械的な条件に基づくものです。将来の相場の動きや投資の成果を保証するものではありません。シグナルが点灯しても相場が想定と違う方向に動くことや、シグナルが出ないまま大きく動くことがあります。</li>
+<li>AIによる分析文には、事実の誤り、数値の取り違え、ニュースの解釈の誤りが含まれる可能性があります。重要な判断をする際は、必ず元のデータや一次情報をご自身でご確認ください。</li>
+<li>データの取得・計算・表示の正確性、完全性、最新性について、運営者は保証しません。システムの不具合やデータ提供元の事情により、誤った内容が表示されたり、更新が止まったりすることがあります。</li>
+<li>本サイトの情報を利用したことで生じたいかなる損害についても、運営者は責任を負いません。投資の最終判断は、ご自身の責任で行ってください。</li>
+<li>運営者は、本サイトで扱う指数・ETF・銘柄に関連する金融商品を保有している場合があります。</li>
+<li>掲載している指数名・商品名・社名は、各社の商標または登録商標です。本サイトは、データ提供元や記載している企業とは関係ありません。</li>
+<li>参考として掲載しているニュース記事の著作権は、各配信元に帰属します。</li>
+<li>本サイトの内容は、予告なく変更・中止することがあります。</li>
+</ul></div>
+</main>
+<footer class="site-ft"><span>© FinVogue</span><span>本サイトは情報提供を目的としたもので、投資助言ではありません。<a href="about.html#disclaimer">免責事項</a></span></footer>
+</body>
+</html>

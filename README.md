@@ -1,10 +1,10 @@
-# マーケット・ストレス・モニター
+# FinVogue
 
-FinVogue に埋め込んで表示する公開ページです。
+市場の状況を整理する個人サイトです(GitHub Pages)。
 
-- `index.html` … 表示用のページ(固定)。「分析」「朝版レポート」「夕方版レポート」のタブ構成。`#morning` `#evening` で直接開けます。
-- `report_morning.html` / `report_evening.html` … 元のHTMLレポート(朝版・夕方版)。分析タスクが crash-monitor からコピーします。
-- `latest.json` … 最新の判定と分析。Claudeの定期実行タスクが朝・夕方に上書きします。
-- `archive/` … 過去の `latest.json` の保存。
+- `index.html` … マーケット・ストレス・モニター。判定と分析は `latest.json`、元のレポートは `report_*.html`、段階の推移は `stage_history.json` から読み込みます。
+- `links.html` / `links.json` … マーケット・ダッシュボード(参考リンク集)。
+- `about.html` … このページについて・免責事項。
+- `archive/` … 過去の判定と分析。
 
-本ページは投資助言ではありません。
+アクセス解析・広告・Cookie・外部スクリプトは使っていません。本サイトは投資助言ではありません。
