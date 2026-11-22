@@ -14,13 +14,9 @@
   --s2:#a3401d; --s2bg:#f9e5dc; --s3bg:#6e1f1f;
   --bad:#b4441e; --badbg:#fbe9e2; --good:#2f6b4c; --goodbg:#e6f1ea;
 }
-@media (prefers-color-scheme:dark){html:not(.embed){
-  --bg:#151513; --card:#1e1d1b; --ink:#edebe6; --muted:#a19d95; --faint:#7d7a73; --line:#33312d;
-  --s0:#7fd1a3; --s0bg:#1b2d22; --s1:#f0c45a; --s1bg:#33290f; --s2:#ff9a77; --s2bg:#3a1c13;
-  --s3bg:#7d2420; --bad:#ff9a77; --badbg:#3a1c13; --good:#7fd1a3; --goodbg:#1b2d22;
-}}
-/* 埋め込み時はGoogleサイトの白背景に合わせ、ダークモードでも明るい配色に固定する */
-html.embed{--bg:#ffffff; color-scheme:light}
+/* サイト全体を明るい配色に統一（端末がダークモードでも同じ見た目） */
+:root{color-scheme:light}
+html.embed{--bg:#ffffff}
 *{box-sizing:border-box}
 html,body{max-width:100%;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -323,7 +319,7 @@ html.embed .sig.off{display:none}
     p.then(function(txt){
       var doc=new DOMParser().parseFromString(txt,"text/html");
       var css=Array.prototype.map.call(doc.querySelectorAll("style"),function(x){return x.textContent;}).join("\n")
-        .replace(/:root/g,":host").replace(/(^|[}\s])body\s*\{/g,"$1.rbody{");
+        .replace(/@media\s*\(prefers-color-scheme:\s*dark\)\s*\{[^{}]*\{[^{}]*\}\s*\}/g,"").replace(/:root/g,":host").replace(/(^|[}\s])body\s*\{/g,"$1.rbody{");
       doc.querySelectorAll("script,style,link").forEach(function(x){x.remove();});
       var title=(doc.querySelector("h1")||{}).textContent||"";
       host.innerHTML='<div class="rep-meta">'+esc(LABEL[tab])+'の元レポート'+
