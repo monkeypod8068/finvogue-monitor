@@ -20,3 +20,5 @@ html.embed .site-hd,html.embed .site-ft{display:none}
   .site-nav a{padding:6px 8px 10px;font-size:13px}
   .site-nav .lg{display:none}
 }
+.site-ft a.sns{color:var(--muted,#6d6a63);text-decoration:none;border-bottom:1px solid var(--line,#e7e3da)}
+.site-ft a.sns:hover{color:var(--ink,#1c1b19)}
