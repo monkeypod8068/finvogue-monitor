@@ -1,0 +1,170 @@
+{
+ "updated": "2026-11-23 19:36",
+ "edition": "夕方版",
+ "us_date": "2026-11-20",
+ "stage": 3,
+ "stage_label": "暴落型",
+ "headline": "判定は段階3のまま。週明けの米株先物は+2.7%と反発しており、今夜の引けで信用と60日安値の条件が外れるかが焦点。",
+ "summary": [
+  "段階3（暴落型）が継続。11/20に米国株・半導体・信用がそろって崩れた。",
+  "今夜の米国で反発が続けば、信用と60日安値の条件が外れ段階が下がる可能性。",
+  "恐怖指数VIXは35.9（30を下回るか）、期間構造1.16（0.97未満で底打ちサイン）。"
+ ],
+ "analysis_html": "<p>本日の東京市場は勤労感謝の日で休場でした。日経平均は11/20の終値56,437円（−5.06%、下げ幅は過去5番目）のままで、アドバンテスト・ソフトバンクグループ・東京エレクトロンの3銘柄で下げ幅の約4割を占めました。米国の値は11/20の終値で判定しており、先物などは取引中の暫定値です。</p><p>週明けの米株先物は、S&amp;P500が+2.7%、ナスダック100が+3.5%と大きく反発しています。今夜この反発が引けまで続くと、判定の基準となる「60日安値」に11/20の安値が加わるため、<b>信用（HYG/IEF）とS&amp;P500・半導体の60日安値割れが機械的に外れ、段階は3から1程度まで下がる可能性</b>があります。ただしそれは一日の反発による変化で、VIXは35.9、期間構造は1.16と、恐怖の水準はまだ高いままです。底打ちを示すサインは、VIX30以上の1つだけが点いています。</p><h3>今夜の見どころ</h3><ul><li><b>反発が引けまで続くか：</b>S&amp;P500が11/20の安値（あと約0.4%下）を割らずに終われるか。</li><li><b>VIXの低下幅：</b>30を下回るには約16%の低下が必要。期間構造が0.97を下回れば底打ちサインです。</li><li><b>材料：</b>米PMI速報、HPE・Zoomなどの決算。11/25にPCE物価、11/26は感謝祭で休場、東京は11/24に3連休明けの取引です。</li></ul>",
+ "checkpoints": [
+  {
+   "label": "信用（HYG/IEF）と11/20の水準",
+   "distance": "±0%（11/20が新しい60日安値）",
+   "meaning": "上で引ければ信用の崩れが外れ、段階3の条件が消える",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と11/20の日中安値",
+   "distance": "あと約0.4%下",
+   "meaning": "下回って引ければ60日安値割れが続き、段階2以上が残る",
+   "dir": "bad"
+  },
+  {
+   "label": "VIX期間構造（VIX/VIX3M）",
+   "distance": "1.0まで約14%、0.97まで約16%の低下が必要",
+   "meaning": "0.97未満で逆転解消（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "VVIX",
+   "distance": "約117まで約15%の低下が必要",
+   "meaning": "下回ればボラの先行指標がピークアウト（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "VIX",
+   "distance": "30まで約16%の低下が必要",
+   "meaning": "30を下回るとパニック水準を脱する",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と200日線",
+   "distance": "あと約6%上",
+   "meaning": "回復できれば段階3の条件の一つが外れる",
+   "dir": "good"
+  }
+ ],
+ "signal_groups": [
+  {
+   "name": "ストレス",
+   "signals": [
+    {
+     "label": "半導体ETFが200日線割れ",
+     "on": true
+    },
+    {
+     "label": "半導体ETFが高値から10%超下落",
+     "on": true
+    },
+    {
+     "label": "S&P500が200日線割れ",
+     "on": true
+    },
+    {
+     "label": "S&P500が60日安値割れ",
+     "on": true
+    },
+    {
+     "label": "VIXが22以上",
+     "on": true
+    },
+    {
+     "label": "VIX期間構造の逆転",
+     "on": true
+    },
+    {
+     "label": "信用（HYG/IEF）が60日安値割れ",
+     "on": true
+    },
+    {
+     "label": "高配当株ETFが50日線割れ",
+     "on": true
+    },
+    {
+     "label": "日経平均が200日線割れ",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "底打ちサイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "VVIXがVIXより先にピークアウト",
+     "on": false
+    },
+    {
+     "label": "期間構造の逆転が解消",
+     "on": false
+    },
+    {
+     "label": "VIXが30以上（パニック水準）",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "回復サイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "期間構造が平常化（0.90未満）",
+     "on": false
+    },
+    {
+     "label": "VIXが200日線を下回る",
+     "on": false
+    },
+    {
+     "label": "半導体ETFが50日線を回復",
+     "on": false
+    },
+    {
+     "label": "信用（HYG/IEF）が50日線を回復",
+     "on": false
+    }
+   ]
+  },
+  {
+   "name": "天底シグナル",
+   "signals": [
+    {
+     "label": "東証の売買代金が時価総額の1%以上",
+     "on": false
+    },
+    {
+     "label": "Fear & Greedが20以下（陰の極）",
+     "on": true
+    },
+    {
+     "label": "Fear & Greedが70以上（陽の極）",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "日経平均が1日で3,008円安、AI・半導体株に何が起きている？下落の材料と来週の注目点（OANDA証券）",
+   "url": "https://www.oanda.jp/lab-education/market_news/20261120_nikkei_3000_drop/"
+  },
+  {
+   "title": "日経平均3,007円安・歴代5位の急落の原因は？AI半導体株安と24日の見通し（本家いなてい）",
+   "url": "https://www.inatei.com/entry/nikkei-plunge-20261120-ai-semiconductor"
+  },
+  {
+   "title": "祝日取引の実施日（日本取引所グループ）",
+   "url": "https://www.jpx.co.jp/derivatives/rules/holidaytrading/index.html"
+  },
+  {
+   "title": "Stock market today: Dow, S&P 500, Nasdaq futures surge amid relief rally（Yahoo Finance）",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-091118583.html"
+  }
+ ]
+}

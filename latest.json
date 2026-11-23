@@ -1,177 +1,170 @@
 {
-  "updated": "2026-11-21 12:27",
-  "edition": "朝版",
-  "us_date": "2026-11-20",
-  "stage": 3,
-  "stage_label": "暴落型",
-  "headline": "S&P500が3.7%安、半導体ETFは10.6%安。信用（HYG/IEF）も60日安値を割り、段階3（暴落型）。底打ちサインはVIX30超のみ。",
-  "analysis_html": "<p>11/20の米国市場はAI関連への売りが一段と強まり、S&amp;P500は−3.7%の6,910、ナスダック総合は−5.3%、ダウは−1.9%でした。S&amp;P500とダウは高値から10%超下げて調整局面入りし、S&amp;P500は7日続落・週間−8.6%です。NVIDIAが−14%、AMDやMicronも−13%台と半導体が急落し、半導体ETF（SMH）は1日で−10.6%、高値からは約37%の下落です。米10年債利回りは約0.12%低下して4.9%台と、債券には逃避の買いが入りました。</p><p>段階3の決め手は信用です。HYG/IEFが60日安値を割り込み、VIX/VIX3Mの逆転（1.16）とS&amp;P500の200日線割れが重なりました。株と金が同時に急落しており、換金売りの色も出ています。一方でVIXは35.9と30を超え、Fear &amp; Greedは10と陰の極です。底打ちの条件は一部そろい始めましたが、VVIXはまだ上昇中で、期間構造の逆転も深まっています。12月のFOMCでは利上げがほぼ織り込まれており、金利面の支えは期待しにくい状況です。</p><p>データの注意：日経平均は11/20の東京終値で、CME日経先物は54,860円とさらに低い水準です。東京市場は23日（月）が祝日のため、次の取引は24日（火）です。</p><h3>見ているポイント</h3><ul><li><b>段階3からの後退：</b>HYG/IEFが約1%戻して60日安値を回復するか、VIX/VIX3Mが1.0未満（約14%低下）になること。</li><li><b>底打ちサイン：</b>VVIXが約15%低下（117前後）、またはVIX/VIX3Mが0.97未満（約16%低下）。</li><li><b>安値の更新：</b>S&amp;P500の11/20の日中安値（6,883前後、終値から約0.4%下）を割り込むかどうか。</li><li><b>来週：</b>米国は26日が感謝祭で休場、27日は短縮取引。薄商いで値が振れやすい点に注意。</li></ul>",
-  "checkpoints": [
+ "updated": "2026-11-23 19:36",
+ "edition": "夕方版",
+ "us_date": "2026-11-20",
+ "stage": 3,
+ "stage_label": "暴落型",
+ "headline": "判定は段階3のまま。週明けの米株先物は+2.7%と反発しており、今夜の引けで信用と60日安値の条件が外れるかが焦点。",
+ "summary": [
+  "段階3（暴落型）が継続。11/20に米国株・半導体・信用がそろって崩れた。",
+  "今夜の米国で反発が続けば、信用と60日安値の条件が外れ段階が下がる可能性。",
+  "恐怖指数VIXは35.9（30を下回るか）、期間構造1.16（0.97未満で底打ちサイン）。"
+ ],
+ "analysis_html": "<p>本日の東京市場は勤労感謝の日で休場でした。日経平均は11/20の終値56,437円（−5.06%、下げ幅は過去5番目）のままで、アドバンテスト・ソフトバンクグループ・東京エレクトロンの3銘柄で下げ幅の約4割を占めました。米国の値は11/20の終値で判定しており、先物などは取引中の暫定値です。</p><p>週明けの米株先物は、S&amp;P500が+2.7%、ナスダック100が+3.5%と大きく反発しています。今夜この反発が引けまで続くと、判定の基準となる「60日安値」に11/20の安値が加わるため、<b>信用（HYG/IEF）とS&amp;P500・半導体の60日安値割れが機械的に外れ、段階は3から1程度まで下がる可能性</b>があります。ただしそれは一日の反発による変化で、VIXは35.9、期間構造は1.16と、恐怖の水準はまだ高いままです。底打ちを示すサインは、VIX30以上の1つだけが点いています。</p><h3>今夜の見どころ</h3><ul><li><b>反発が引けまで続くか：</b>S&amp;P500が11/20の安値（あと約0.4%下）を割らずに終われるか。</li><li><b>VIXの低下幅：</b>30を下回るには約16%の低下が必要。期間構造が0.97を下回れば底打ちサインです。</li><li><b>材料：</b>米PMI速報、HPE・Zoomなどの決算。11/25にPCE物価、11/26は感謝祭で休場、東京は11/24に3連休明けの取引です。</li></ul>",
+ "checkpoints": [
+  {
+   "label": "信用（HYG/IEF）と11/20の水準",
+   "distance": "±0%（11/20が新しい60日安値）",
+   "meaning": "上で引ければ信用の崩れが外れ、段階3の条件が消える",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と11/20の日中安値",
+   "distance": "あと約0.4%下",
+   "meaning": "下回って引ければ60日安値割れが続き、段階2以上が残る",
+   "dir": "bad"
+  },
+  {
+   "label": "VIX期間構造（VIX/VIX3M）",
+   "distance": "1.0まで約14%、0.97まで約16%の低下が必要",
+   "meaning": "0.97未満で逆転解消（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "VVIX",
+   "distance": "約117まで約15%の低下が必要",
+   "meaning": "下回ればボラの先行指標がピークアウト（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "VIX",
+   "distance": "30まで約16%の低下が必要",
+   "meaning": "30を下回るとパニック水準を脱する",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と200日線",
+   "distance": "あと約6%上",
+   "meaning": "回復できれば段階3の条件の一つが外れる",
+   "dir": "good"
+  }
+ ],
+ "signal_groups": [
+  {
+   "name": "ストレス",
+   "signals": [
     {
-      "label": "信用（HYG/IEF）と60日安値",
-      "distance": "回復まであと約1%",
-      "meaning": "回復すれば段階3の条件が外れる"
+     "label": "半導体ETFが200日線割れ",
+     "on": true
     },
     {
-      "label": "VIX期間構造（VIX/VIX3M）",
-      "distance": "1.16（逆転中）。1.0まで約14%、0.97まで約16%低下",
-      "meaning": "1.0未満で段階3の条件が外れ、0.97未満で底打ちサイン"
+     "label": "半導体ETFが高値から10%超下落",
+     "on": true
     },
     {
-      "label": "VVIX",
-      "distance": "138。基準（約117）まで約15%低下が必要",
-      "meaning": "下がればボラの先行指標がピークアウトした底打ちサイン"
+     "label": "S&P500が200日線割れ",
+     "on": true
     },
     {
-      "label": "S&P500と60日安値",
-      "distance": "回復まで約4%上昇（200日線までは約6%）",
-      "meaning": "回復すれば段階2の条件の一つが外れる"
+     "label": "S&P500が60日安値割れ",
+     "on": true
     },
     {
-      "label": "S&P500と11/20の日中安値",
-      "distance": "あと約0.4%下",
-      "meaning": "割り込めば下げ止まりの確認が遅れる"
+     "label": "VIXが22以上",
+     "on": true
     },
     {
-      "label": "半導体ETF（SMH）と60日安値",
-      "distance": "回復まで約11%上昇",
-      "meaning": "回復すれば半導体の安値割れが解消"
+     "label": "VIX期間構造の逆転",
+     "on": true
     },
     {
-      "label": "東証の売買代金÷時価総額",
-      "distance": "0.71%（1%まで約1.4倍の商いが必要）",
-      "meaning": "1%以上なら投げ売りによる底の候補"
+     "label": "信用（HYG/IEF）が60日安値割れ",
+     "on": true
+    },
+    {
+     "label": "高配当株ETFが50日線割れ",
+     "on": true
+    },
+    {
+     "label": "日経平均が200日線割れ",
+     "on": true
     }
-  ],
-  "signal_groups": [
+   ]
+  },
+  {
+   "name": "底打ちサイン",
+   "positive": true,
+   "signals": [
     {
-      "name": "ストレス",
-      "signals": [
-        {
-          "label": "半導体ETFが200日線割れ",
-          "on": true
-        },
-        {
-          "label": "半導体ETFが高値から10%超下落",
-          "on": true
-        },
-        {
-          "label": "半導体ETFが60日安値割れ",
-          "on": true
-        },
-        {
-          "label": "S&P500が200日線割れ",
-          "on": true
-        },
-        {
-          "label": "S&P500が60日安値割れ",
-          "on": true
-        },
-        {
-          "label": "VIXが22以上",
-          "on": true
-        },
-        {
-          "label": "VIX期間構造の逆転",
-          "on": true
-        },
-        {
-          "label": "信用（HYG/IEF）が60日安値割れ",
-          "on": true
-        },
-        {
-          "label": "高配当株ETFが50日線割れ",
-          "on": true
-        },
-        {
-          "label": "日経平均が200日線割れ",
-          "on": true
-        },
-        {
-          "label": "株安と金急落が同時（換金売り）",
-          "on": true
-        }
-      ]
+     "label": "VVIXがVIXより先にピークアウト",
+     "on": false
     },
     {
-      "name": "底打ちサイン",
-      "positive": true,
-      "signals": [
-        {
-          "label": "VVIXがVIXより先にピークアウト",
-          "on": false
-        },
-        {
-          "label": "期間構造の逆転が解消",
-          "on": false
-        },
-        {
-          "label": "VIXが30以上（パニック水準）",
-          "on": true
-        }
-      ]
+     "label": "期間構造の逆転が解消",
+     "on": false
     },
     {
-      "name": "回復サイン",
-      "positive": true,
-      "signals": [
-        {
-          "label": "期間構造が平常化（0.90未満）",
-          "on": false
-        },
-        {
-          "label": "VIXが200日線を下回る",
-          "on": false
-        },
-        {
-          "label": "半導体ETFが50日線を回復",
-          "on": false
-        },
-        {
-          "label": "信用（HYG/IEF）が50日線を回復",
-          "on": false
-        }
-      ]
-    },
-    {
-      "name": "天底シグナル",
-      "signals": [
-        {
-          "label": "東証プライムの売買代金が時価総額の1%以上",
-          "on": false
-        },
-        {
-          "label": "Fear & Greedが20以下（陰の極）",
-          "on": true
-        },
-        {
-          "label": "Fear & Greedが70以上（陽の極）",
-          "on": false
-        }
-      ]
+     "label": "VIXが30以上（パニック水準）",
+     "on": true
     }
-  ],
-  "sources": [
+   ]
+  },
+  {
+   "name": "回復サイン",
+   "positive": true,
+   "signals": [
     {
-      "title": "Closing Look — Friday, November 20, 2026（CappNotes）",
-      "url": "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026"
+     "label": "期間構造が平常化（0.90未満）",
+     "on": false
     },
     {
-      "title": "Stock market slide wipes out Nasdaq gains for the year on AI rout（Fox Business）",
-      "url": "https://www.foxbusiness.com/markets/wall-street-suffers-historic-losses-dow-sp-500-plunge-correction-territory"
+     "label": "VIXが200日線を下回る",
+     "on": false
     },
     {
-      "title": "Stock Market Today, November 20, 2026: US Stocks Close Sharply Lower（StockTitan）",
-      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026"
+     "label": "半導体ETFが50日線を回復",
+     "on": false
     },
     {
-      "title": "Why a Record IPO Could Not Stop Nasdaq's Worst Week（Intelligence Report）",
-      "url": "https://intelligencereport.org/2026/11/21/stock-market-today-nasdaq-worst-week/"
+     "label": "信用（HYG/IEF）が50日線を回復",
+     "on": false
     }
-  ],
-  "summary": [
-    "段階3（暴落型）。株・半導体・信用がそろって崩れ、恐怖を示す指標は「陰の極」の水準。",
-    "信用（HYG/IEF）が60日安値の上に戻れるか。戻れば段階3の条件が外れる。",
-    "VVIX 138（約117まで下がれば底打ちサイン）／VIX期間構造 1.16（0.97未満で底打ちサイン）"
-  ]
+   ]
+  },
+  {
+   "name": "天底シグナル",
+   "signals": [
+    {
+     "label": "東証の売買代金が時価総額の1%以上",
+     "on": false
+    },
+    {
+     "label": "Fear & Greedが20以下（陰の極）",
+     "on": true
+    },
+    {
+     "label": "Fear & Greedが70以上（陽の極）",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "日経平均が1日で3,008円安、AI・半導体株に何が起きている？下落の材料と来週の注目点（OANDA証券）",
+   "url": "https://www.oanda.jp/lab-education/market_news/20261120_nikkei_3000_drop/"
+  },
+  {
+   "title": "日経平均3,007円安・歴代5位の急落の原因は？AI半導体株安と24日の見通し（本家いなてい）",
+   "url": "https://www.inatei.com/entry/nikkei-plunge-20261120-ai-semiconductor"
+  },
+  {
+   "title": "祝日取引の実施日（日本取引所グループ）",
+   "url": "https://www.jpx.co.jp/derivatives/rules/holidaytrading/index.html"
+  },
+  {
+   "title": "Stock market today: Dow, S&P 500, Nasdaq futures surge amid relief rally（Yahoo Finance）",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-091118583.html"
+  }
+ ]
 }
