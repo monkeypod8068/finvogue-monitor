@@ -29,6 +29,9 @@ body{background:var(--bg);color:var(--ink);
   font-family:"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP",system-ui,sans-serif;
   font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
 .wrap{max-width:860px;margin:0 auto;padding:6px 14px 24px}
+/* 読み込み中にフッターが見えて動かないよう高さを確保（CLS対策） */
+#app{min-height:100vh}
+html.embed #app{min-height:0}
 h2{font-size:15px;margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--ink);line-height:1.4}
 h2 .n{font-size:12px;color:var(--faint);font-weight:400;margin-left:6px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
