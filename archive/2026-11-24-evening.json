@@ -1,0 +1,174 @@
+{
+ "updated": "2026-11-24 19:37",
+ "edition": "夕方版",
+ "us_date": "2026-11-23",
+ "stage": 1,
+ "stage_label": "注意(調整)",
+ "headline": "日経平均は+3.9%の急反発も、米株先物は反落気味。今夜の焦点は信用（HYG/IEF）が60日安値を守れるかとVVIXの低下。",
+ "summary": [
+  "段階1（注意）。日経平均は+3.9%反発、米先物はやや軟調。",
+  "今夜の分かれ目は信用（HYG/IEF）。60日安値まで約0.3%で、割れれば段階3。",
+  "VVIXは117.4。117.3以下で底打ちサイン、期間構造は0.97未満で解消。"
+ ],
+ "analysis_html": "<p>米国の数値は11/23の終値、日経平均は今日の終値です。ドル円・株価指数先物・原油は取引中の暫定値で、VIXは寄り付き前の値を使わず前日の終値で判定しています。</p><p>今日の東京は、米国でのエヌビディアのCEO復帰を受けたAI・半導体株の買い戻しで<b>日経平均が+3.9%の58,645円</b>と急反発し、TOPIXも+2.5%でした。アドバンテストと東京エレクトロンの2銘柄で日経平均を約973円押し上げており、半導体主導の戻りです。一方、東証プライムの売買代金は時価総額の約0.65%と20日平均を下回り、投げ売りや大商いを伴う底入れの形ではありません。日経平均はなお200日線を約6%下回っています。</p><p>米国の寄り付き前は、S&amp;P500先物が-0.4%、ナスダック100先物が-1.1%（暫定）と、前日の急騰の反動が出ています。判定は段階1ですが、VIX期間構造は1.04と逆転したままで、S&amp;P500も200日線の下です。<b>信用（HYG/IEF）が60日安値を割ると、段階3の条件が再びそろいます。</b></p><h3>今夜の見どころ</h3><ul><li><b>信用（HYG/IEF）：</b>60日安値まで約0.3%。ここを守れるかが最重要。</li><li><b>VVIX：</b>底打ち基準（約117.3）とほぼ同水準。少しでも下がれば「VVIXのピークアウト」が点灯。</li><li><b>材料：</b>今夜は引け後にデルの決算。11/25は米PCE物価、11/26は感謝祭で米国休場。12月のFOMCは利上げがほぼ織り込まれています。</li></ul>",
+ "checkpoints": [
+  {
+   "label": "信用（HYG/IEF）と60日安値",
+   "distance": "あと約0.3%下",
+   "meaning": "割れると期間構造の逆転と合わせて段階3に戻る",
+   "dir": "bad"
+  },
+  {
+   "label": "VVIXと底打ち基準（約117.3）",
+   "distance": "ほぼ境目（0.1%未満）",
+   "meaning": "下回るとVVIXのピークアウト（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "VIX期間構造（VIX/VIX3M）",
+   "distance": "1.0まで約4%、0.97まで約7%の低下",
+   "meaning": "0.97未満で逆転解消（底打ちサイン）",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と200日線",
+   "distance": "あと約1.6%上",
+   "meaning": "回復すれば段階3の条件の一つが外れる",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と60日安値（11/20の日中安値）",
+   "distance": "あと約4.9%下",
+   "meaning": "割れると段階2（調整拡大）",
+   "dir": "bad"
+  },
+  {
+   "label": "VIXと30",
+   "distance": "あと約13%上",
+   "meaning": "30を再び超えると底打ちサインが消え、パニック水準に戻る",
+   "dir": "bad"
+  }
+ ],
+ "signal_groups": [
+  {
+   "name": "ストレス",
+   "signals": [
+    {
+     "label": "半導体ETFが200日線割れ",
+     "on": true
+    },
+    {
+     "label": "半導体ETFが高値から10%超下落",
+     "on": true
+    },
+    {
+     "label": "S&P500が200日線割れ",
+     "on": true
+    },
+    {
+     "label": "S&P500が60日安値割れ",
+     "on": false
+    },
+    {
+     "label": "VIXが22以上",
+     "on": true
+    },
+    {
+     "label": "VIX期間構造の逆転",
+     "on": true
+    },
+    {
+     "label": "信用（HYG/IEF）が60日安値割れ",
+     "on": false
+    },
+    {
+     "label": "高配当株ETFが50日線割れ",
+     "on": false
+    },
+    {
+     "label": "日経平均が200日線割れ",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "底打ちサイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "VVIXがVIXより先にピークアウト",
+     "on": false
+    },
+    {
+     "label": "期間構造の逆転が解消",
+     "on": false
+    },
+    {
+     "label": "VIXが30超えのあと30を下回る",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "回復サイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "期間構造が平常化（0.90未満）",
+     "on": false
+    },
+    {
+     "label": "VIXが200日線を下回る",
+     "on": false
+    },
+    {
+     "label": "半導体ETFが50日線を回復",
+     "on": false
+    },
+    {
+     "label": "信用（HYG/IEF）が50日線を回復",
+     "on": false
+    }
+   ]
+  },
+  {
+   "name": "天底シグナル",
+   "signals": [
+    {
+     "label": "東証プライムの売買代金が時価総額の1%以上",
+     "on": false
+    },
+    {
+     "label": "Fear & Greedが20以下（陰の極）",
+     "on": true
+    },
+    {
+     "label": "Fear & Greedが70以上（陽の極）",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "日経平均大引け：前日比2207.98円高の58644.63円（財経新聞）",
+   "url": "https://www.zaikei.co.jp/article/20261124/878939.html"
+  },
+  {
+   "title": "日経平均寄与度ランキング（大引け）（みんかぶ／フィスコ）",
+   "url": "https://minkabu.jp/news/4671079"
+  },
+  {
+   "title": "US stocks rebound as battered AI and chip stocks rally after correction（Fox Business）",
+   "url": "https://www.foxbusiness.com/markets/stocks-november-23-2026"
+  },
+  {
+   "title": "Huang comeback in focus; Fed's Williams on rates - what's moving markets（Investing.com）",
+   "url": "https://www.investing.com/news/economy-news/huang-comeback-in-focus-feds-williams-on-rates--whats-moving-markets-5047389"
+  },
+  {
+   "title": "Why Is Nvidia Stock Up? Huang Back（Admirals）",
+   "url": "https://admiralmarkets.com/analytics/traders-blog/why-is-nvidia-stock-up-jensen-huang-reinstated-ceo"
+  }
+ ]
+}

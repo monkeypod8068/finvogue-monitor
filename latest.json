@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-24 08:07",
- "edition": "朝版",
+ "updated": "2026-11-24 19:37",
+ "edition": "夕方版",
  "us_date": "2026-11-23",
  "stage": 1,
  "stage_label": "注意(調整)",
- "headline": "段階3から段階1へ低下。米株の急反発で信用と60日安値の条件が外れたが、恐怖指標はまだ高めで信用は境目すれすれ。",
+ "headline": "日経平均は+3.9%の急反発も、米株先物は反落気味。今夜の焦点は信用（HYG/IEF）が60日安値を守れるかとVVIXの低下。",
  "summary": [
-  "段階1（注意）に低下。米株が急反発し、信用不安と60日安値割れが消えた。",
-  "次の分かれ目は信用（HYG/IEF）。60日安値まで約0.3%で、割れれば再び段階3。",
-  "VIXは26.6（30を下回り底打ちサイン点灯）、VVIXは117.4（117.3以下で次のサイン）。"
+  "段階1（注意）。日経平均は+3.9%反発、米先物はやや軟調。",
+  "今夜の分かれ目は信用（HYG/IEF）。60日安値まで約0.3%で、割れれば段階3。",
+  "VVIXは117.4。117.3以下で底打ちサイン、期間構造は0.97未満で解消。"
  ],
- "analysis_html": "<p>米国の基準日は11/23（確定値）です。日経平均と東証の数値は、勤労感謝の日の休場のため11/20のままです。</p><p>11/23の米国市場は、エヌビディアの取締役会がジェンスン・フアン氏のCEO復帰を決めたことで急反発しました。S&amp;P500は+4.7%、半導体ETFは+15.0%、エヌビディアは+31%。これで<b>信用（HYG/IEF）とS&amp;P500・半導体の60日安値割れが外れ、判定は段階3から段階1に下がりました</b>。VIXは35.9から26.6に低下し、底打ちサインの「VIXが30超えのあと30を下回る」が点灯しています。</p><p>ただし一日の反発による変化で、VIX期間構造は1.04と逆転したまま、S&amp;P500も200日線を約1.6%下回っています。信用は60日安値の約0.3%上と境目にあり、ここを割ると期間構造の逆転と合わせて<b>段階3の条件が再びそろう</b>点に注意が必要です。</p><h3>見ているポイント</h3><ul><li><b>信用（HYG/IEF）：</b>60日安値を割らずに推移できるか。</li><li><b>VVIX：</b>117.3以下になれば「VVIXのピークアウト」が点灯。現在はほぼ境目です。</li><li><b>材料：</b>11/25に米PCE物価とGDP改定値、11/26は感謝祭で米国休場。12/1にフアン氏の議会での聴取が予定されています。</li></ul>",
+ "analysis_html": "<p>米国の数値は11/23の終値、日経平均は今日の終値です。ドル円・株価指数先物・原油は取引中の暫定値で、VIXは寄り付き前の値を使わず前日の終値で判定しています。</p><p>今日の東京は、米国でのエヌビディアのCEO復帰を受けたAI・半導体株の買い戻しで<b>日経平均が+3.9%の58,645円</b>と急反発し、TOPIXも+2.5%でした。アドバンテストと東京エレクトロンの2銘柄で日経平均を約973円押し上げており、半導体主導の戻りです。一方、東証プライムの売買代金は時価総額の約0.65%と20日平均を下回り、投げ売りや大商いを伴う底入れの形ではありません。日経平均はなお200日線を約6%下回っています。</p><p>米国の寄り付き前は、S&amp;P500先物が-0.4%、ナスダック100先物が-1.1%（暫定）と、前日の急騰の反動が出ています。判定は段階1ですが、VIX期間構造は1.04と逆転したままで、S&amp;P500も200日線の下です。<b>信用（HYG/IEF）が60日安値を割ると、段階3の条件が再びそろいます。</b></p><h3>今夜の見どころ</h3><ul><li><b>信用（HYG/IEF）：</b>60日安値まで約0.3%。ここを守れるかが最重要。</li><li><b>VVIX：</b>底打ち基準（約117.3）とほぼ同水準。少しでも下がれば「VVIXのピークアウト」が点灯。</li><li><b>材料：</b>今夜は引け後にデルの決算。11/25は米PCE物価、11/26は感謝祭で米国休場。12月のFOMCは利上げがほぼ織り込まれています。</li></ul>",
  "checkpoints": [
   {
    "label": "信用（HYG/IEF）と60日安値",
@@ -45,7 +45,7 @@
   {
    "label": "VIXと30",
    "distance": "あと約13%上",
-   "meaning": "30を再び超えるとパニック水準に戻る",
+   "meaning": "30を再び超えると底打ちサインが消え、パニック水準に戻る",
    "dir": "bad"
   }
  ],
@@ -135,7 +135,7 @@
    "name": "天底シグナル",
    "signals": [
     {
-     "label": "東証の売買代金が時価総額の1%以上",
+     "label": "東証プライムの売買代金が時価総額の1%以上",
      "on": false
     },
     {
@@ -151,24 +151,24 @@
  ],
  "sources": [
   {
-   "title": "Stock Market Today, Nov. 23: Nvidia Surges 31% as Jensen Huang Reclaims CEO Role（The Motley Fool）",
-   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-nvidia-surges-31-adding-nearly-usd1-trillion-in-market-value-as-jensen-huang-reclaims-ceo-role/"
+   "title": "日経平均大引け：前日比2207.98円高の58644.63円（財経新聞）",
+   "url": "https://www.zaikei.co.jp/article/20261124/878939.html"
   },
   {
-   "title": "Nvidia board reinstates Jensen Huang as CEO（Al Jazeera）",
-   "url": "https://www.aljazeera.com/economy/2026/11/23/nvidia-board-reinstates-jensen-huang-as-ceo"
+   "title": "日経平均寄与度ランキング（大引け）（みんかぶ／フィスコ）",
+   "url": "https://minkabu.jp/news/4671079"
   },
   {
-   "title": "Jensen Huang reinstated as Nvidia CEO（ABC News）",
-   "url": "https://abcnews.com/Business/nvidia-reinstates-jensen-huang-ceo/story?id=138375516"
+   "title": "US stocks rebound as battered AI and chip stocks rally after correction（Fox Business）",
+   "url": "https://www.foxbusiness.com/markets/stocks-november-23-2026"
   },
   {
-   "title": "NVIDIA Form 8-K プレスリリース（SEC）",
-   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm"
+   "title": "Huang comeback in focus; Fed's Williams on rates - what's moving markets（Investing.com）",
+   "url": "https://www.investing.com/news/economy-news/huang-comeback-in-focus-feds-williams-on-rates--whats-moving-markets-5047389"
   },
   {
-   "title": "US Personal Income and Outlays (PCE) November 2026（FinanceCalendar）",
-   "url": "https://www.financecalendar.com/event/us-personal-income-and-outlays-pce-november-2026/"
+   "title": "Why Is Nvidia Stock Up? Huang Back（Admirals）",
+   "url": "https://admiralmarkets.com/analytics/traders-blog/why-is-nvidia-stock-up-jensen-huang-reinstated-ceo"
   }
  ]
 }
