@@ -30,11 +30,20 @@ CJK_CANDIDATES = [
 ]
 
 
+FALLBACK = {"Black": ["Black", "Bold"], "Bold": ["Bold"], "Medium": ["Medium", "Regular"], "Regular": ["Regular"]}
+
+
 def cjk(size: int, weight: str = "Bold") -> ImageFont.FreeTypeFont:
-    for c in CJK_CANDIDATES:
-        p = Path(c.format(w=weight))
-        if p.exists():
-            return ImageFont.truetype(str(p), size, index=0)   # index 0 = 日本語(JP)
+    # GitHub Actionsの fonts-noto-cjk は Regular と Bold だけなので、無い太さは近いものを使う
+    for w in FALLBACK.get(weight, [weight]) + ["Bold", "Regular"]:
+        for c in CJK_CANDIDATES:
+            p = Path(c.format(w=w))
+            if p.exists():
+                return ImageFont.truetype(str(p), size, index=0)   # index 0 = 日本語(JP)
+    import glob
+    hits = sorted(glob.glob("/usr/share/fonts/**/NotoSansCJK*.tt[cf]", recursive=True))
+    if hits:
+        return ImageFont.truetype(hits[0], size, index=0)
     raise SystemExit("日本語フォント(Noto Sans CJK)が見つかりません")
 
 
