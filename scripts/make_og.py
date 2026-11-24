@@ -215,6 +215,10 @@ def main() -> int:
         days = []
     date = str(d.get("updated", ""))[:10]
     kind = "evening" if "夕" in str(d.get("edition", "")) else "morning"
+    if kind == "evening":
+        # Xに投稿するのは朝版だけなので、夕方版の画像は作らない(リポジトリの容量を抑える)
+        print("[skip] 夕方版は画像を作りません")
+        return 0
     if len(date) != 10:
         print("latest.json の updated が読めません", file=sys.stderr)
         return 1
