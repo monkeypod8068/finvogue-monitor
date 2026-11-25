@@ -1,51 +1,51 @@
 {
- "updated": "2026-11-25 19:36",
- "edition": "夕方版",
- "us_date": "2026-11-24",
- "stage": 1,
- "stage_label": "注意(調整)",
- "headline": "日経平均は1,633円安とAI関連が崩れ段階1を継続。米先物も下落し、今夜は信用（HYG/IEF）が60日安値を守れるかが焦点。",
+ "updated": "2026-11-26 08:06",
+ "edition": "朝版",
+ "us_date": "2026-11-25",
+ "stage": 3,
+ "stage_label": "暴落型",
+ "headline": "信用（HYG/IEF）が60日安値をわずかに割り、段階1→段階3に上昇。底打ちサイン2つは点灯を維持し、期間構造の逆転解消が次の焦点。",
  "summary": [
-  "段階1（注意）を継続。日経平均は-2.8%、米先物も下落中。",
-  "今夜の分かれ目は信用（HYG/IEF）。60日安値まで約0.1%。",
-  "VIXは26（30未満）、VVIXは114で底打ち基準117.3を下回る。"
+  "段階3（暴落型）に上昇。信用指標が60日安値をわずかに割った。",
+  "次の分かれ目はVIX期間構造。0.97未満で逆転解消（底打ちサイン）。",
+  "VIX/VIX3Mは1.08、VIXは28（30未満）。S&P500の安値まで約4%。"
  ],
- "analysis_html": "<p>米国の指標は11/24の終値、日経平均と高配当株50は今日の終値、米株価指数先物・CME日経先物・ドル円・原油は取引中の暫定値です。VIXは寄り付き前の値を使わず前日終値で判定しています。</p><p>東京は<b>日経平均が57,011円（-1,633円、-2.8%）</b>と大幅反落。米国でAI関連が大きく下げた流れで、ソフトバンクグループが約15%安、電気機器や非鉄金属が売られました。一方TOPIXは-0.5%にとどまり、プライムでは値上がり銘柄の方が多く、医薬品・不動産・食料品が上昇。高配当株50は+1.4%で、日経平均に対する比率は60日高値を更新し、<b>日本では守りの銘柄が優位</b>です。売買代金は約7.5兆円で、時価総額比は約0.6%と投げ売りの水準（1%）には届いていません。</p><p>米国はナスダック100先物が約-2.5%、S&amp;P500先物が約-1.5%。半導体株がAI投資の借入依存への懸念や関税報道で売られています。S&amp;P500の60日安値まではまだ約4%の余裕がありますが、<b>信用（HYG/IEF）は60日安値まであと約0.1%</b>。割れるとVIX期間構造の逆転（1.03）とS&amp;P500の200日線割れがそろい、段階3（暴落型）の条件を満たします。</p><h3>今夜の見どころ</h3><ul><li><b>22:30</b> 米10月PCE物価と7-9月期GDP（改定値）。12月の利上げはほぼ織り込み済み。</li><li>主要16か国・地域への追加関税の報道。</li><li>半導体株の下げが寄り付き後も続くか。11/26は感謝祭で米国休場。</li></ul>",
+ "analysis_html": "<p>米国の指標は11/25の終値です。日経平均と高配当株50は11/25の東京の終値、最も格付けの低い社債（CCC格）の利回り差は11/24の値です。</p><p>11/25の米国はS&amp;P500が-0.3%、ナスダックが-0.6%。10月のPCE物価が前年比+3.8%（コア+3.3%）と高く、米通商代表部の追加関税案（日本・EUは15%）も重荷になりました。前日にCEO復帰で急騰したNVIDIAは-3.9%と反落し、半導体ETFは-1.0%。<b>信用（HYG/IEF）が0.8312と60日安値（0.8328）を約0.2%下回り</b>、VIX期間構造の逆転（1.08）とS&amp;P500の200日線割れがそろって、判定は<b>段階1から段階3（暴落型）</b>に上がりました。ただし割れ幅は小さく、株価指数は11/20の安値まで約4%上にあります。</p><p>一方、底打ちサインは3つ中2つが点灯したまま。VVIXは115で、10日高値138からピークアウトしています。VIXも30超えのあと28に下がっています。Fear &amp; Greedは15で陰の極。最も格付けの低い社債の利回り差は約1,400bpで高止まりし、信用の下位層にはまだ改善が見えません。</p><h3>見ているポイント</h3><ul><li>信用（HYG/IEF）が60日安値の上に戻れるか、さらに下げるか。</li><li>VIX/VIX3Mが0.97を下回れば、3つ目の底打ちサインが点灯。</li><li>11/26は感謝祭で米国休場、11/27は短縮取引。薄商いで値が振れやすい。</li></ul>",
  "checkpoints": [
   {
    "label": "信用（HYG/IEF）と60日安値",
-   "distance": "あと約0.1%下",
-   "meaning": "割れると期間構造の逆転と合わせて段階3（暴落型）",
-   "dir": "bad"
+   "distance": "すでに約0.2%下回る",
+   "meaning": "60日安値の上に戻れば段階3の条件が外れる",
+   "dir": "good"
   },
   {
    "label": "VIX期間構造（VIX/VIX3M）",
-   "distance": "1.0まで約3%、0.97まで約6%の低下",
-   "meaning": "0.97未満で逆転解消（2つ目の底打ちサイン）",
+   "distance": "1.0まで約7%、0.97まで約10%の低下",
+   "meaning": "0.97未満で逆転解消（底打ちサイン）",
    "dir": "good"
   },
   {
    "label": "VVIXと底打ち基準（約117.3）",
-   "distance": "あと約3%上",
+   "distance": "あと約2%上",
    "meaning": "上回るとVVIXのピークアウトが消灯",
    "dir": "bad"
   },
   {
+   "label": "VIXと30",
+   "distance": "あと約6%上",
+   "meaning": "30を再び超えるとパニック水準に戻る",
+   "dir": "bad"
+  },
+  {
    "label": "S&P500と60日安値（11/20の日中安値）",
-   "distance": "あと約4.4%下",
-   "meaning": "割れると段階2（調整拡大）",
+   "distance": "あと約4%下",
+   "meaning": "割れるとパニック時の安値を更新",
    "dir": "bad"
   },
   {
    "label": "半導体ETFと60日安値",
-   "distance": "あと約7%下",
-   "meaning": "割れると段階2（調整拡大）",
-   "dir": "bad"
-  },
-  {
-   "label": "VIXと30",
-   "distance": "あと約14%上",
-   "meaning": "30を再び超えるとパニック水準に戻る",
+   "distance": "あと約6%下",
+   "meaning": "割れると半導体の下げが新局面に",
    "dir": "bad"
   }
  ],
@@ -79,7 +79,7 @@
     },
     {
      "label": "信用（HYG/IEF）が60日安値割れ",
-     "on": false
+     "on": true
     },
     {
      "label": "高配当株ETFが50日線割れ",
@@ -151,16 +151,16 @@
  ],
  "sources": [
   {
-   "title": "日経平均サマリー（25日）（OANDA Lab／DZHフィナンシャルリサーチ）",
-   "url": "https://www.oanda.jp/lab-education/market_news/mn_1045754_202611251753/"
+   "title": "Stock Market Today, Nov. 25: Nvidia Slides 3.9% as the Market Considers Hot PCE Inflation Data and New Tariff Proposals（The Motley Fool）",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
   },
   {
-   "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface（Investing.com）",
-   "url": "https://www.investing.com/news/stock-market-news/us-chip-stocks-extend-losses-premarket-as-ai-spending-concerns-resurface-5050161"
+   "title": "Stock Market Today Live, November 25, 2026（StockTitan）",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-25-2026"
   },
   {
-   "title": "Nvidia shares fall 5% premarket after Huang return rally wanes（Investing.com）",
-   "url": "https://www.investing.com/news/stock-market-news/nvidia-shares-fall-5-premarket-after-huang-return-rally-wanes-5050114"
+   "title": "Stock Market Today: Huangover Is Causing Headache for Tech Stocks（24/7 Wall St.）",
+   "url": "https://247wallst.com/investing/2026/11/25/stock-market-today-huangover-is-causing-headache-for-tech-stocks/"
   }
  ]
 }
