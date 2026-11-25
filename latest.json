@@ -1,27 +1,27 @@
 {
- "updated": "2026-11-25 08:06",
- "edition": "朝版",
+ "updated": "2026-11-25 19:36",
+ "edition": "夕方版",
  "us_date": "2026-11-24",
  "stage": 1,
  "stage_label": "注意(調整)",
- "headline": "半導体ETFが-7%と急反落し段階1を継続。信用（HYG/IEF）は60日安値まで約0.1%に迫る一方、VVIXのピークアウトが点灯。",
+ "headline": "日経平均は1,633円安とAI関連が崩れ段階1を継続。米先物も下落し、今夜は信用（HYG/IEF）が60日安値を守れるかが焦点。",
  "summary": [
-  "段階1（注意）を継続。半導体が-7%急落、S&P500は-0.5%。",
-  "最大の分かれ目は信用（HYG/IEF）。60日安値まで約0.1%、割れれば段階3。",
-  "VVIXは114と基準117.3を下回り底打ちサイン点灯。VIXは26で30未満。"
+  "段階1（注意）を継続。日経平均は-2.8%、米先物も下落中。",
+  "今夜の分かれ目は信用（HYG/IEF）。60日安値まで約0.1%。",
+  "VIXは26（30未満）、VVIXは114で底打ち基準117.3を下回る。"
  ],
- "analysis_html": "<p>米国の数値は11/24の終値です。最も格付けの低い社債（CCC格）の利回り差は11/23の値で、1日古い点に注意してください。</p><p>前日にCEO復帰で+31%急騰したエヌビディアが約6%下落し、<b>半導体ETFは-7.3%</b>、フィラデルフィア半導体指数は約8%下げました。CEO復帰を巡る政治・ガバナンス面のリスクや、AI投資の借入依存への警戒が背景です。一方でダウは+0.9%と5万ドル台を回復し、資金はヘルスケアや生活必需品に移りました。S&amp;P500は-0.5%、ナスダック総合は-1.5%です。12月のFOMCは利上げがほぼ織り込まれています。</p><p>判定は段階1のままですが、<b>信用（HYG/IEF）は60日安値まであと約0.1%</b>です。VIX期間構造は1.03と逆転が続き、S&amp;P500も200日線の下にあるため、HYG/IEFが安値を割ると段階3の条件がそろいます。前向きな材料は、VVIXが114と高値から下がり「VVIXのピークアウト」が点灯したことです。VIXは26で30を下回ったままです。最も格付けの低い社債の利回り差は1,387bpと高止まりしており、信用の下位層の回復はまだ見えません。</p><h3>見ているポイント</h3><ul><li><b>信用（HYG/IEF）：</b>60日安値を守れるかが最重要。</li><li><b>VIX期間構造：</b>0.97未満で逆転解消（2つ目の底打ちサイン）。</li><li><b>材料：</b>今夜は米PCE物価。11/26は感謝祭で米国休場、11/27は短縮取引。</li></ul>",
+ "analysis_html": "<p>米国の指標は11/24の終値、日経平均と高配当株50は今日の終値、米株価指数先物・CME日経先物・ドル円・原油は取引中の暫定値です。VIXは寄り付き前の値を使わず前日終値で判定しています。</p><p>東京は<b>日経平均が57,011円（-1,633円、-2.8%）</b>と大幅反落。米国でAI関連が大きく下げた流れで、ソフトバンクグループが約15%安、電気機器や非鉄金属が売られました。一方TOPIXは-0.5%にとどまり、プライムでは値上がり銘柄の方が多く、医薬品・不動産・食料品が上昇。高配当株50は+1.4%で、日経平均に対する比率は60日高値を更新し、<b>日本では守りの銘柄が優位</b>です。売買代金は約7.5兆円で、時価総額比は約0.6%と投げ売りの水準（1%）には届いていません。</p><p>米国はナスダック100先物が約-2.5%、S&amp;P500先物が約-1.5%。半導体株がAI投資の借入依存への懸念や関税報道で売られています。S&amp;P500の60日安値まではまだ約4%の余裕がありますが、<b>信用（HYG/IEF）は60日安値まであと約0.1%</b>。割れるとVIX期間構造の逆転（1.03）とS&amp;P500の200日線割れがそろい、段階3（暴落型）の条件を満たします。</p><h3>今夜の見どころ</h3><ul><li><b>22:30</b> 米10月PCE物価と7-9月期GDP（改定値）。12月の利上げはほぼ織り込み済み。</li><li>主要16か国・地域への追加関税の報道。</li><li>半導体株の下げが寄り付き後も続くか。11/26は感謝祭で米国休場。</li></ul>",
  "checkpoints": [
   {
    "label": "信用（HYG/IEF）と60日安値",
    "distance": "あと約0.1%下",
-   "meaning": "割れると期間構造の逆転と合わせて段階3",
+   "meaning": "割れると期間構造の逆転と合わせて段階3（暴落型）",
    "dir": "bad"
   },
   {
    "label": "VIX期間構造（VIX/VIX3M）",
    "distance": "1.0まで約3%、0.97まで約6%の低下",
-   "meaning": "0.97未満で逆転解消（底打ちサイン）",
+   "meaning": "0.97未満で逆転解消（2つ目の底打ちサイン）",
    "dir": "good"
   },
   {
@@ -151,16 +151,16 @@
  ],
  "sources": [
   {
-   "title": "Nasdaq, S&P 500 end lower following Monday's Nvidia-fueled rally（Reuters／MarketScreener）",
-   "url": "https://www.marketscreener.com/news/nasdaq-s-p-500-end-lower-following-monday-s-nvidia-fueled-rally-ce7851dbdd81f720"
+   "title": "日経平均サマリー（25日）（OANDA Lab／DZHフィナンシャルリサーチ）",
+   "url": "https://www.oanda.jp/lab-education/market_news/mn_1045754_202611251753/"
   },
   {
-   "title": "Dow Reclaims 50,000; Philadelphia Semiconductor Index Plunges Nearly 8%（BigGo Finance）",
-   "url": "https://finance.biggo.com/news/efa4550f-327b-4612-b151-77555e7d62dd"
+   "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface（Investing.com）",
+   "url": "https://www.investing.com/news/stock-market-news/us-chip-stocks-extend-losses-premarket-as-ai-spending-concerns-resurface-5050161"
   },
   {
-   "title": "Stock market today: Dow rises, S&P 500 and Nasdaq decline as chip sector tumbles（Yahoo Finance）",
-   "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   "title": "Nvidia shares fall 5% premarket after Huang return rally wanes（Investing.com）",
+   "url": "https://www.investing.com/news/stock-market-news/nvidia-shares-fall-5-premarket-after-huang-return-rally-wanes-5050114"
   }
  ]
 }
