@@ -40,6 +40,14 @@
     {"title": "公的年金（GPIF）の運用状況", "source": "GPIF", "url": "https://www.gpif.go.jp/operation/the-latest-results.html",
      "note": "国内外の株式・債券の運用実績と資産構成。四半期ごとに公表"}
    ]
+  },
+  {
+   "name": "識者の見方",
+   "desc": "データではなく、市場参加者の見解を知るためのリンクです。内容は各筆者・運営元の見解で、FinVogueの判定とは関係ありません。",
+   "items": [
+    {"title": "The Financial Pointer", "source": "浜町SCI", "url": "https://www.financialpointer.com/jp/",
+     "note": "海外の著名投資家や経済学者の見方を、日本語で手短に紹介しているサイト。数字とは別の角度から、市場参加者が何を考えているかを知るのに役立つ（無料）"}
+   ]
   }
  ]
 }
