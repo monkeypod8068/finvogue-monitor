@@ -1,0 +1,166 @@
+{
+ "updated": "2026-11-28 08:08",
+ "edition": "朝版",
+ "us_date": "2026-11-27",
+ "stage": 1,
+ "stage_label": "注意(調整)",
+ "headline": "段階3から段階1（注意）に低下。短縮取引でS&P500は+1.6%、半導体ETFは+4.2%と反発し、信用指標が60日安値の上に戻った。",
+ "summary": [
+  "段階3から段階1（注意）に低下。米国株は半導体主導で大幅反発。",
+  "次の焦点はVIX期間構造。1.0を再び超えるか、0.97を下回るか。",
+  "VIX/VIX3Mは1.000（0.97未満で好転）。信用指標は安値まであと約0.6%。"
+ ],
+ "analysis_html": "<p>米国の指標は11/27（感謝祭翌日の短縮取引）の終値です。未確定の可能性の注記がありますが、主要な値は報道の終値と一致しています。</p><p>判定は<b>段階3（暴落型）から段階1（注意）に低下</b>しました。信用指標（HYG/IEF）が60日安値の上に戻り、VIX/VIX3Mも1.000とわずかに1.0を下回って期間構造の逆転が外れたためです。S&amp;P500は+1.6%、ナスダック100は+2.6%、半導体ETFは+4.2%とと、AI関連の買い戻しが続きました。</p><p>ただし戻りは際どい水準です。VIX/VIX3Mは1.0ちょうど、信用指標の60日安値までは約0.6%で、S&amp;P500はまだ200日線の下にあります。最も格付けの低い社債の利回り差も高止まりしています。底打ちサインは3つ中2つ（VVIXのピークアウト、VIXが30超えのあと30を下回る）が点灯を維持、回復サインは0です。米10年債利回りは約4.94%に上昇し、12月のFOMCでの利上げがほぼ織り込まれています。</p><h3>見ているポイント</h3><ul><li>VIX/VIX3Mが0.97未満（約3%の低下）なら底打ちサイン3つ目が点灯。1.0超えなら逆転に逆戻り。</li><li>S&amp;P500が200日線（あと約0.8%上）を回復できるか。</li><li>来週はISM製造業（火）・ISM非製造業（木）・11月の雇用統計、FRBは12/8〜9のFOMCを前に発言自粛期間に入る。</li></ul>",
+ "checkpoints": [
+  {
+   "label": "VIX期間構造（VIX/VIX3M）",
+   "distance": "1.000。0.97まで約3%の低下",
+   "meaning": "0.97未満で底打ちサイン点灯、1.0超えで逆転に戻る",
+   "dir": "good"
+  },
+  {
+   "label": "信用（HYG/IEF）と60日安値",
+   "distance": "あと約0.6%下",
+   "meaning": "割れると期間構造次第で段階3に戻りやすい",
+   "dir": "bad"
+  },
+  {
+   "label": "S&P500と200日線",
+   "distance": "あと約0.8%上",
+   "meaning": "回復すれば段階3の条件が成り立ちにくくなる",
+   "dir": "good"
+  },
+  {
+   "label": "VVIXと底打ち基準（約117）",
+   "distance": "あと約9%上",
+   "meaning": "上回るとVVIXのピークアウトが消灯",
+   "dir": "bad"
+  },
+  {
+   "label": "信用（HYG/IEF）と50日線",
+   "distance": "あと約2%上",
+   "meaning": "回復すれば回復サイン点灯（信用不安の後退）",
+   "dir": "good"
+  },
+  {
+   "label": "S&P500と60日安値（11/20の日中安値）",
+   "distance": "あと約6%下",
+   "meaning": "割れると調整が新局面に（段階2の条件）",
+   "dir": "bad"
+  }
+ ],
+ "signal_groups": [
+  {
+   "name": "ストレス",
+   "signals": [
+    {
+     "label": "半導体ETFが200日線割れ",
+     "on": true
+    },
+    {
+     "label": "半導体ETFが高値から10%超下落",
+     "on": true
+    },
+    {
+     "label": "S&P500が200日線割れ",
+     "on": true
+    },
+    {
+     "label": "S&P500が60日安値割れ",
+     "on": false
+    },
+    {
+     "label": "VIXが22以上",
+     "on": true
+    },
+    {
+     "label": "VIX期間構造の逆転",
+     "on": false
+    },
+    {
+     "label": "信用（HYG/IEF）が60日安値割れ",
+     "on": false
+    },
+    {
+     "label": "高配当株ETFが50日線割れ",
+     "on": false
+    },
+    {
+     "label": "日経平均が200日線割れ",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "底打ちサイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "VVIXがVIXより先にピークアウト",
+     "on": true
+    },
+    {
+     "label": "期間構造の逆転が解消",
+     "on": false
+    },
+    {
+     "label": "VIXが30超えのあと30を下回る",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "回復サイン",
+   "positive": true,
+   "signals": [
+    {
+     "label": "期間構造が平常化（0.90未満）",
+     "on": false
+    },
+    {
+     "label": "VIXが200日線を下回る",
+     "on": false
+    },
+    {
+     "label": "半導体ETFが50日線を回復",
+     "on": false
+    },
+    {
+     "label": "信用（HYG/IEF）が50日線を回復",
+     "on": false
+    },
+    {
+     "label": "高ベータ株が低ボラ株に対して売られすぎから反転",
+     "on": false
+    }
+   ]
+  },
+  {
+   "name": "天底シグナル",
+   "signals": [
+    {
+     "label": "東証プライムの売買代金が時価総額の1%以上",
+     "on": false
+    },
+    {
+     "label": "Fear & Greedが20以下（陰の極）",
+     "on": false
+    },
+    {
+     "label": "Fear & Greedが70以上（陽の極）",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Not Your Typical Black Friday: Unusually Large Gain Caps Best Week for Stocks Since April 2025（TheStreet Pro）",
+   "url": "https://pro.thestreet.com/market-commentary/not-your-typical-black-friday-unusually-large-gain-caps-best-week-for-stocks-since-april-2025"
+  },
+  {
+   "title": "Wall Street Gains as AI Trade Rebounds（Trading Economics）",
+   "url": "https://tradingeconomics.com/united-states/stock-market/news/505924"
+  }
+ ]
+}
