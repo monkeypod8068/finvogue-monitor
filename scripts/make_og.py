@@ -198,11 +198,14 @@ def page(d: dict, png: str, slug: str) -> str:
 <meta property="og:image:height" content="{H}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@finvogue_jp">
-<meta http-equiv="refresh" content="0; url=../">
-<link rel="canonical" href="{BASE_URL}">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{e(img)}">
+<link rel="canonical" href="{e(url)}">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head><body style="font-family:sans-serif;padding:40px;color:#1c1b19">
 <p><a href="../">マーケット・ストレス・モニター（FinVogue）へ移動します</a></p>
+<script>setTimeout(function(){{location.replace("../")}},300)</script>
 </body></html>
 """
 
