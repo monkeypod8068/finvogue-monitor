@@ -97,26 +97,31 @@ def md(s: str) -> str:
     return f"{int(p[1])}/{int(p[2])}"
 
 
+# Xはカード画像の左下(下から約90px)にページのタイトルを重ねて表示するので、
+# 文字や帯は SAFE_BOTTOM より上に収め、下の帯域は空けておく。
+SAFE_BOTTOM = H - 100
+
+
 def render(d: dict, days: list[dict]) -> Image.Image:
     st = int(d.get("stage", 0))
     img = Image.new("RGB", (W, H), PAPER)
     dr = ImageDraw.Draw(img)
     # 上部: ロゴと日付
-    dr.text((60, 34), "FinVogue", font=serif(44), fill=INK)
+    dr.text((60, 24), "FinVogue", font=serif(42), fill=INK)
     upd = str(d.get("updated", ""))[:10]
     ed = d.get("edition", "")
     right = f"{md(upd)} {ed}" if upd else ed
     if d.get("us_date"):
         right += f"｜米国 {md(str(d['us_date']))} 終値"
     f = cjk(24, "Medium")
-    dr.text((W - 60 - dr.textlength(right, font=f), 48), right, font=f, fill=MUTED)
+    dr.text((W - 60 - dr.textlength(right, font=f), 36), right, font=f, fill=MUTED)
 
     # 段階のパネル
-    x0, y0, x1, y1 = 60, 108, W - 60, 288
+    x0, y0, x1, y1 = 60, 92, W - 60, 238
     dr.rounded_rectangle((x0, y0, x1, y1), radius=18, fill=STAGE_BG[st])
     fg = STAGE_FG[st]
-    dr.text((x0 + 36, y0 + 26), "現在の判定（4段階）", font=cjk(22, "Medium"), fill=fg)
-    dr.text((x0 + 36, y0 + 58), f"段階{st}　{STAGES[st]}", font=cjk(64, "Black"), fill=fg)
+    dr.text((x0 + 36, y0 + 16), "現在の判定（4段階）", font=cjk(21, "Medium"), fill=fg)
+    dr.text((x0 + 36, y0 + 40), f"段階{st}　{STAGES[st]}", font=cjk(60, "Black"), fill=fg)
     # 前日からの変化
     prev = days[-2]["stage"] if len(days) >= 2 else None
     if prev is not None and prev != st:
@@ -134,42 +139,42 @@ def render(d: dict, days: list[dict]) -> Image.Image:
         fc = cjk(30, "Bold")
         tw = dr.textlength(chg, font=fc)
         bx = x1 - 36 - tw - 32
-        dr.rounded_rectangle((bx, y0 + 76, x1 - 36, y0 + 126), radius=25,
+        dr.rounded_rectangle((bx, y0 + 50, x1 - 36, y0 + 100), radius=25,
                              outline=fg, width=2)
-        dr.text((bx + 16, y0 + 81), chg, font=fc, fill=fg)
+        dr.text((bx + 16, y0 + 55), chg, font=fc, fill=fg)
     # 4段階の目盛り
     sw = (x1 - x0 - 72 - 18) / 4
     for i in range(4):
         sx = x0 + 36 + i * (sw + 6)
-        dr.rounded_rectangle((sx, y1 - 30, sx + sw, y1 - 22), radius=3,
-                             fill=fg if i == st else (fg if i < st else None),
-                             outline=fg)
-        if i != st and i > st:
-            pass
+        dr.rounded_rectangle((sx, y1 - 22, sx + sw, y1 - 14), radius=3,
+                             fill=fg if i <= st else None, outline=fg)
 
-    # 3行まとめ
-    fl, ft = cjk(21, "Medium"), cjk(25, "Bold")
-    y = 308
-    for lab, txt in summary_items(d):
-        dr.text((60, y + 4), lab, font=fl, fill=MUTED)
-        for li, line in enumerate(wrap2(dr, txt, ft, W - 60 - 210)):
-            dr.text((210, y), line, font=ft, fill=INK)
-            y += 33
-        y += 12
-
-    # 直近30営業日の帯
+    # 直近30営業日の帯(パネルのすぐ下。Xのタイトル表示と重ならない位置)
+    y = 248
     if len(days) >= 5:
-        by, bh = 548, 22
+        fs = cjk(18, "Medium")
         n = len(days)
+        dr.text((60, y), f"段階の推移（直近{n}営業日） {md(days[0]['date'])}〜{md(days[-1]['date'])}",
+                font=fs, fill=FAINT)
+        by, bh = y + 28, 18
         bw = (W - 120 - 2 * (n - 1)) / n
         for i, x in enumerate(days):
             bx = 60 + i * (bw + 2)
             dr.rounded_rectangle((bx, by, bx + bw, by + bh), radius=3, fill=STAGE_BG[int(x["stage"])])
-        fs = cjk(18, "Medium")
-        dr.text((60, by + 28), f"段階の推移（直近{n}営業日） {md(days[0]['date'])}〜{md(days[-1]['date'])}",
-                font=fs, fill=FAINT)
-        tag = "monkeypod8068.github.io/finvogue-monitor"
-        dr.text((W - 60 - dr.textlength(tag, font=fs), by + 28), tag, font=fs, fill=FAINT)
+        y = by + bh + 18
+    else:
+        y += 8
+
+    # 3行まとめ(各2行まで)
+    fl, ft = cjk(21, "Medium"), cjk(25, "Bold")
+    for lab, txt in summary_items(d):
+        dr.text((60, y + 4), lab, font=fl, fill=MUTED)
+        for line in wrap2(dr, txt, ft, W - 60 - 210):
+            if y + 30 > SAFE_BOTTOM:
+                break
+            dr.text((210, y), line, font=ft, fill=INK)
+            y += 31
+        y += 8
     # 下端のライン
     dr.rectangle((0, H - 8, W, H), fill="#6e1f1f")
     return img
